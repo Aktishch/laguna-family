@@ -12,7 +12,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       '--btn-accent': theme('colors.white.DEFAULT'),
       color: 'var(--btn-color)',
       fontSize: theme('fontSize.16'),
-      fontWeight: 600,
+      fontWeight: 400,
       textAlign: 'center',
       display: 'flex',
       alignItems: 'center',
@@ -132,7 +132,6 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
     {
       btn: (size) => {
         return {
-          borderRadius: '6px',
           height: size,
           paddingInline: `calc(${size} / 2)`,
         }
