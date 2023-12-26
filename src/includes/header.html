@@ -16,6 +16,40 @@
   <title><%= data.title %></title>
 </head>
 
+<%
+  var header = {
+    logo: '',
+    size: 'w-auto',
+    nav: [],
+    tel: '',
+    btn: false
+  }
+
+  if (data.page === 'club') {
+    header.logo = 'img/pictures/logo-club-house'
+    header.size = 'w-20 sm:w-28'
+    header.nav = [
+      {
+        id: '#restaurant',
+        text: 'О ресторане'
+      },
+      {
+        id: '#menu',
+        text: 'Меню'
+      },
+      {
+        id: '#halls',
+        text: 'Банкетные залы'
+      },
+      {
+        id: '#contacts',
+        text: 'Контакты'
+      }
+    ]
+    header.tel = '8 928 237 72 00'
+  }
+%>
+
 <body>
 
   <!-- Прелоадер -->
@@ -26,13 +60,63 @@
 
   <!-- Шапка документа -->
 
-  <header class="container flex items-center justify-between gap-4 absolute z-3 top-0 left-0 right-0 py-8">
+  <% if (data.page === 'index') { %>
+  <header class="container flex items-center justify-between gap-3 sm:gap-6 fixed z-3 top-0 left-0 right-0 bg-opacity-90 py-4 lg:py-8 duration-2" data-header>
     <div class="flex items-center">
       <a class="btn btn-white text-18 sm:text-20 md:text-24" href="" data-waved="light">Laguna Family</a>
       <span class="hidden md:block font-normal text-white text-opacity-40 text-16 leading-1 border-l border-solid border-white border-opacity-40 pl-4 ml-4">Семья ресторанов</span>
     </div>
     <div class="flex items-center sm:gap-8 lg:gap-14">
-      <a class="btn btn-white hidden sm:flex" data-waved="light" href="">Контакты</a>
+      <a class="btn btn-white hidden sm:flex" data-scroll data-waved="light" href="#contacts">Контакты</a>
       <a class="btn btn-white btn-md sm:btn-lg btn-contur text-14 sm:text-16" data-waved="light" href="" target="_blank">Задать вопрос</a>
     </div>
   </header>
+  <% } else if (data.page !== '404') { %>
+  <header class="container flex items-center justify-between gap-3 sm:gap-6 fixed z-3 top-0 left-0 right-0 bg-opacity-90 py-4 lg:py-8 duration-2" data-header>
+    <a class="btn btn-white <%= header.size %>" data-waved="light" href="/">
+      <%= picture({src: header.logo, format: '.png', webp: true, classes: 'w-auto', data: false, loading: 'auto'}) %>
+    </a>
+    <nav class="hidden xl:flex items-center justify-center gap-10 mx-auto">
+      <% _.forEach((header.nav), (item) => { %>
+      <a class="btn btn-white" data-scroll data-waved="light" href="<%= item.id %>"><%= item.text %></a>
+      <% }) %>
+    </nav>
+    <a class="btn btn-white font-bold text-16 sm:text-20" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
+    <% if (header.btn) { %>
+    <a class="btn btn-white btn-lg btn-contur hidden lg:flex" data-waved="light" href="" target="_blank">Задать вопрос</a>
+    <% } %>
+    <button class="btn btn-white xl:hidden text-36 sm:text-48" data-sidebar-open="mobile-menu" data-waved="light">
+      <%= icon({id: 'burger'}) %>
+    </button>
+  </header>
+  <% } %>
+
+  <% if (data.page !== 'index' && data.page !== '404') { %>
+  <!-- Меню -->
+
+  <div class="menu fixed inset-0 z-6 invisible opacity-0 duration-1" data-sidebar="close" data-sidebar-resize="xl" id="mobile-menu">
+    <div class="menu__content flex flex-col bg-primary invisible opacity-0 overflow-auto backdrop-blur-sm w-full max-w-[375px] h-full duration-3">
+      <div class="menu__head flex items-center justify-between gap-2 border-b border-solid border-white p-4 duration-5 delay-3">
+        <a class="btn btn-white w-20" data-waved="light" href="/">
+          <%= picture({src: header.logo, format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
+        </a>
+        <button class="btn btn-white text-24" data-sidebar-close="menu" data-waved="light">
+          <%= icon({id: 'close'}) %>
+        </button>
+      </div>
+      <div class="menu__nav flex flex-col items-start gap-4 text-white invisible opacity-0 pt-4 pb-10 px-4 duration-9 delay-5">
+        <% _.forEach((header.nav), (item) => { %>
+        <a class="hover:underline underline-offset-4 text-20" href="<%= item.id %>"><%= item.text %></a>
+        <% }) %>
+      </div>
+      <div class="menu__footer invisible opacity-0 mt-auto px-4 pt-4 pb-10 duration-5 delay-9">
+        <div class="flex flex-col items-start gap-5">
+          <a class="btn btn-white font-bold text-20" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
+          <% if (!header.btn) { %>
+          <a class="btn btn-white btn-lg btn-contur w-full" data-waved="light" href="" target="_blank">Задать вопрос</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
