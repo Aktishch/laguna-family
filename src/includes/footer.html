@@ -2,6 +2,7 @@
 
 <footer class="container bg-primary text-white sm:pt-14 sm:pb-6" id="contacts">
   <div class="flex flex-col sm:flex-row sm:flex-wrap flex-wrap justify-between gap-10 lg:gap-20 border-b border-solid border-white border-opacity-5 pb-10 xl:pb-14 mb-4">
+    <% if (data.page === 'index') { %>
     <div class="flex flex-col items-start">
       <a class="btn btn-white text-left text-36 leading-3 mb-6" href="" data-waved="light">Laguna <br> Family</a>
       <span class="font-normal text-14 leading-1">Семья ресторанов</span>
@@ -54,6 +55,49 @@
         event@laguna-family.rest
       </a>
     </div>
+    <% } else if (data.page === 'club') { %>
+    <div class="flex flex-col items-start">
+      <a class="btn btn-white w-40 mb-5 sm:mb-9" data-waved="light" href="/">
+        <%= picture({src: 'img/pictures/logo-club-house', format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
+      </a>
+      <p class="font-normal text-16 leading-3 opacity-40 mb-5 sm:mb-9">
+        Особая инфраструктура, не имеющая <br>
+        аналогов на Черноморском побережье.
+      </p>
+      <ul class="flex flex-col gap-3">
+        <li class="font-medium uppercase text-16">ООО ВИАС</li>
+        <li class="font-medium uppercase text-14">ИНН 7706549902</li>
+        <li class="font-medium uppercase text-14">ОГРН 1047796657116</li>
+      </ul>
+    </div>
+    <div class="flex flex-col items-start">
+      <h3 class="font-normal text-18 sm:text-20 lg:text-24 leading-3 mb-5 sm:mb-8">Навигация</h3>
+      <nav class="flex flex-col items-start gap-2">
+        <a class="btn btn-white opacity-80" data-waved="light" href="">Семейный ресторан</a>
+        <a class="btn btn-white opacity-80" data-waved="light" href="">Бассейн с пляжным клубом</a>
+        <a class="btn btn-white opacity-80" data-waved="light" href="">Ночной клуб</a>
+        <a class="btn btn-white opacity-80" data-waved="light" href="">Контакты</a>
+        <a class="btn btn-white opacity-80" data-waved="light" href="">Организация мероприятий</a>
+        <a class="btn btn-white opacity-80" data-waved="light" href="">Другие проекты «Laguna Family»</a>
+      </nav>
+    </div>
+    <div class="flex flex-col items-start">
+      <h3 class="font-normal text-18 sm:text-20 lg:text-24 leading-3 mb-5 sm:mb-8">Контакты</h3>
+      <p class="font-normal text-14 leading-4 mb-5 sm:mb-8">Россия, Краснодарский край, <br>Геленджик, Голубая бухта, ул. Стартовая 1</p>
+      <a class="btn btn-white text-20 sm:text-22 mb-5 sm:mb-9" data-waved="light" href="tel: +7 (928) 237-72-00">
+        <span class="text-20 opacity-40 mr-2">
+          <%= icon({id: 'phone'}) %>
+        </span>
+        +7 (928) 237-72-00
+      </a>
+      <a class="btn btn-white text-14" data-waved="light" href="mailto: golfrest@laguna-family.rest">
+        <span class="text-20 opacity-40 mr-2">
+          <%= icon({id: 'email'}) %>
+        </span>
+        golfrest@laguna-family.rest
+      </a>
+    </div>
+    <% } %>
   </div>
   <div class="flex flex-wrap items-center justify-between gap-5">
     <div class="font-normal text-14 leading-1 opacity-40">

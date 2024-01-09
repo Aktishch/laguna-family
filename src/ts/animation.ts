@@ -20,7 +20,7 @@ export const animation = (): void => {
 
     const height: number = item.offsetHeight
     const offsetTop: number = setOffset(item).top
-    const screenPosition = 4
+    const screenPosition = 3
     let point: number = window.innerHeight - height / screenPosition
 
     if (point > window.innerHeight) point = window.innerHeight - window.innerHeight / screenPosition

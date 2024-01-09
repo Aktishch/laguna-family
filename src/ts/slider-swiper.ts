@@ -30,4 +30,30 @@ export default (): void => {
       },
     },
   }) as Swiper
+
+  new window.Swiper('.events-slider .swiper', {
+    navigation: {
+      prevEl: '.events-slider .swiper-button-prev',
+      nextEl: '.events-slider .swiper-button-next',
+    },
+    slidesPerView: 1.2,
+    spaceBetween: 16,
+    speed: 500,
+    grabCursor: true,
+    breakpoints: {
+      [media.sm]: {
+        slidesPerView: 1.8,
+      },
+      [media.md]: {
+        slidesPerView: 2.5,
+      },
+      [media.lg]: {
+        slidesPerView: 3,
+        spaceBetween: 28,
+      },
+      [media.xl]: {
+        slidesPerView: 4,
+      },
+    },
+  }) as Swiper
 }

@@ -79,3 +79,56 @@
     background-image: radial-gradient(336.9% 105.08% at 0% 100%, theme("colors.white.DEFAULT / 30%") 29.69%, transparent 100%), linear-gradient(180deg, theme("colors.white.DEFAULT / 20%") 0%, transparent 100%);
   }
 }
+
+// Концепция
+.concept {
+  &__grid {
+    &::after {
+      background-image: linear-gradient(180deg, transparent 0%, theme("colors.primary.DEFAULT / 70%") 58.13%, theme("colors.primary.DEFAULT") 100%);
+
+      @apply content-auto absolute inset-0;
+    }
+  }
+}
+
+// События
+.events {
+  --gradient-color: theme("colors.white.DEFAULT");
+
+  &::before,
+  &::after {
+    background-image: linear-gradient(var(--gradient-deg), var(--gradient-color) 0%, transparent 100%);
+
+    @apply content-auto hidden absolute z-1 top-0 bottom-0 pointer-events-none w-full max-w-[200px] h-full;
+
+    @screen md {
+      @apply block;
+    }
+
+    @screen xl {
+      @apply max-w-[400px];
+    }
+  }
+
+  &::before {
+    --gradient-deg: 90deg;
+
+    @apply left-0;
+  }
+
+  &::after {
+    --gradient-deg: 270deg;
+
+    @apply right-0;
+  }
+
+  &-slider {
+    &-button.swiper-button-disabled {
+      @apply hidden;
+    }
+  }
+
+  &--dark {
+    --gradient-color: theme("colors.primary.DEFAULT");
+  }
+}
