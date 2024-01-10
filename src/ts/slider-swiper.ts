@@ -56,4 +56,23 @@ export default (): void => {
       },
     },
   }) as Swiper
+
+  new window.Swiper('.building-slider .swiper', {
+    slidesPerView: 1.2,
+    spaceBetween: 16,
+    grabCursor: true,
+    breakpoints: {
+      [media.sm]: {
+        slidesPerView: 1.5,
+      },
+      [media.md]: {
+        slidesPerView: 2,
+        spaceBetween: 28,
+      },
+      [media.xl]: {
+        slidesPerView: 3,
+        allowTouchMove: false,
+      },
+    },
+  }) as Swiper
 }

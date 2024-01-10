@@ -116,8 +116,8 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
 
         return {
           '--btn-color': color.DEFAULT,
-          '--btn-fade': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.3 }),
-          '--btn-focus': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.4 }),
+          '--btn-fade': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.2 }),
+          '--btn-focus': formatColor({ mode: 'rgba', color: parsed.color, alpha: 0.3 }),
           '--btn-hovered': checkColor(hex, -amount) !== '0' ? getColor(hex, -amount) : getColor(hex, amount),
         }
       },

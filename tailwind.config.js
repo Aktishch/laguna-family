@@ -42,6 +42,10 @@ module.exports = {
       grey: {
         DEFAULT: '#E9ECEF',
       },
+
+      red: {
+        DEFAULT: '#be1b1b',
+      },
     },
 
     fontFamily: {
@@ -156,6 +160,7 @@ module.exports = {
         50: '3.125rem',
         subtitle: '3.375rem',
         title: '6rem',
+        404: '8rem',
       },
 
       borderColor: {
@@ -200,7 +205,7 @@ module.exports = {
       sm: '36px',
       md: '40px',
       lg: '46px',
-      xl: '56px',
+      xl: '52px',
       xxl: '64px',
     },
   },
@@ -208,11 +213,11 @@ module.exports = {
   plugins: [
     require('./plugins/container'),
     require('./plugins/dialog'),
-    // require('./plugins/card'),
+    require('./plugins/card'),
     require('./plugins/pack'),
     require('./plugins/picture'),
-    // require('./plugins/form'),
-    // require('./plugins/input'),
+    require('./plugins/form'),
+    require('./plugins/input'),
     require('./plugins/button'),
     // require('./plugins/switch'),
     require('./plugins/animation'),

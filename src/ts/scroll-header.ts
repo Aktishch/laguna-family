@@ -11,5 +11,7 @@ export default (): void => {
     header.offsetHeight < currentOffsetTop ? header.classList.add('bg-black') : header.classList.remove('bg-black')
   }
 
+  scrollHeader()
+
   document.addEventListener('scroll', scrollHeader as EventListener)
 }

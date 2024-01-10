@@ -6,7 +6,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
     '.input-cover': {
       display: 'flex',
       width: '100%',
-      '--input-radius': '8px',
+      '--input-radius': '4px',
 
       '& .input': {
         flexGrow: 1,
@@ -20,6 +20,16 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       '& .input:last-child': {
         borderTopRightRadius: 'var(--input-radius)',
         borderBottomRightRadius: 'var(--input-radius)',
+      },
+
+      '&-border-bottom': {
+        '--input-radius': '0',
+
+        '& .input': {
+          borderTop: 'none',
+          borderLeft: 'none',
+          borderRight: 'none',
+        },
       },
     },
 

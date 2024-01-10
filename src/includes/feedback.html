@@ -1,0 +1,32 @@
+<section class="container relative bg-grey overflow-hidden">
+  <div class="absolute inset-0 xxl:max-w-[1920px] p-4 sm:p-0 xxl:mx-auto duration-6 anim anim-left" data-anim="hidden">
+    <div class="pack pack-rect-lg bg-grey w-full max-w-[950px] sm:h-full">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/feedback-bg', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="relative bg-white sm:w-full sm:max-w-[720px] ml-2 sm:ml-auto mr-2 sm:mr-0 mt-56 sm:mt-0 py-8 sm:py-12 lg:py-20 px-5 sm:px-10 lg:px-20 duration-6 anim anim-right" data-anim="hidden">
+    <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-4 lg:mb-9">Задайте вопрос</h2>
+    <p class="font-normal text-14 sm:text-16 leading-3 opacity-60 mb-4 lg:mb-9">Оставьте ваш номер и мы ответим на любой ваш вопрос!</p>
+    <form class="form mb-5 lg:mb-6" data-form="submit">
+      <label class="form-label mb-5 lg:mb-8" data-label="input">
+        <div class="form-wrapper">
+          <div class="input-cover input-cover-border-bottom">
+            <input class="input input-black input-xl" data-input="name" type="text" placeholder="Ваше имя" name="name">
+          </div>
+          <span class="form-error" data-error>Пожалуйста, введите ваше имя!</span>
+        </div>
+      </label>
+      <label class="form-label mb-10 lg:mb-14" data-label="input">
+        <div class="form-wrapper">
+          <div class="input-cover input-cover-border-bottom">
+            <input class="input input-black input-xl" data-input="tel" type="tel" placeholder="Телефон" name="tel">
+          </div>
+          <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+        </div>
+      </label>
+      <button class="btn btn-black btn-lg btn-contur" data-waved="dark" type="submit">Отправить</button>
+    </form>
+    <div class="hover:underline underline-offset-4 text-12 leading-2 opacity-80 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных</div>
+  </div>
+</section>

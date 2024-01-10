@@ -19,14 +19,18 @@
 <%
   var header = {
     logo: '',
+    logoDark: '',
     size: 'w-auto',
+    scroll: true,
     nav: [],
     tel: '',
-    btn: false
+    btn: false,
+    text: ''
   }
 
   if (data.page === 'club') {
     header.logo = 'img/pictures/logo-club-house'
+    header.logoDark = 'img/pictures/logo-club-house-dark'
     header.size = 'w-20 sm:w-28'
     header.nav = [
       {
@@ -47,6 +51,61 @@
       }
     ]
     header.tel = '8 928 237 72 00'
+    header.text = 'Особая инфраструктура, не имеющая аналогов на Черноморском побережье.'
+  } else if (data.page === 'laguna') {
+    header.logo = 'img/pictures/logo-laguna'
+    header.logoDark = 'img/pictures/logo-laguna-dark'
+    header.size = 'w-32 sm:w-44'
+    header.nav = [
+      {
+        id: '#about',
+        text: 'О комплексе'
+      },
+      {
+        id: '#events',
+        text: 'События'
+      },
+      {
+        id: '#gallery',
+        text: 'Галерея'
+      },
+      {
+        id: '#organization',
+        text: 'Организация мероприятий'
+      },
+      {
+        id: '#contacts',
+        text: 'Контакты'
+      }
+    ]
+    header.tel = '8 966 760 99 66'
+    header.text = 'Лагуна Family - это место с уникальной инфраструктурой, не имеющей аналогов на Черноморском побережье'
+  } else if (data.page === 'laguna-restaurant') {
+    header.logo = 'img/pictures/logo-laguna'
+    header.logoDark = 'img/pictures/logo-laguna-dark'
+    header.size = 'w-32 sm:w-44'
+    header.scroll = false
+    header.nav = [
+      {
+        id: '',
+        text: 'Главная'
+      },
+      {
+        id: '',
+        text: 'Семейный ресторан'
+      },
+      {
+        id: '',
+        text: 'Бассейн с пляжным клубом'
+      },
+      {
+        id: '',
+        text: 'Ночной клуб'
+      }
+    ]
+    header.tel = '8 966 760 99 66'
+    header.btn = true
+    header.text = 'Лагуна Family - это место с уникальной инфраструктурой, не имеющей аналогов на Черноморском побережье'
   }
 %>
 
@@ -58,20 +117,21 @@
     <%= preloader %>
   </div>
 
+  <% if (data.status) { %>
   <!-- Шапка документа -->
 
   <% if (data.page === 'index') { %>
   <header class="container flex items-center justify-between gap-3 sm:gap-6 fixed z-3 top-0 left-0 right-0 bg-opacity-90 py-4 xl:py-8 duration-2" data-header>
-    <div class="flex items-center">
-      <a class="btn btn-white text-18 sm:text-20 md:text-24" href="" data-waved="light">Laguna Family</a>
-      <span class="hidden md:block font-normal text-white text-opacity-40 text-16 leading-1 border-l border-solid border-white border-opacity-40 pl-4 ml-4">Семья ресторанов</span>
+    <div class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-0">
+      <a class="btn btn-white text-16 sm:text-20 md:text-24" href="" data-waved="light">Laguna Family</a>
+      <span class="font-normal text-white text-opacity-40 text-12 sm:text-14 md:text-16 leading-1 md:border-l md:border-solid md:border-white md:border-opacity-40 md:pl-4 md:ml-4">Семья ресторанов</span>
     </div>
     <div class="flex items-center sm:gap-8 lg:gap-14">
       <a class="btn btn-white hidden sm:flex" data-scroll data-waved="light" href="#contacts">Контакты</a>
       <a class="btn btn-white btn-md sm:btn-lg btn-contur text-14 sm:text-16" data-waved="light" href="" target="_blank">Задать вопрос</a>
     </div>
   </header>
-  <% } else if (data.page !== '404') { %>
+  <% } else { %>
   <header class="container flex items-center justify-between gap-3 sm:gap-6 fixed z-3 top-0 left-0 right-0 bg-opacity-90 py-4 xl:py-8 duration-2" data-header>
     <button class="btn btn-white xl:hidden text-36 sm:text-48" data-sidebar-open="mobile-menu" data-waved="light">
       <%= icon({id: 'burger'}) %>
@@ -81,37 +141,73 @@
     </a>
     <nav class="hidden xl:flex items-center justify-center gap-10 mx-auto">
       <% _.forEach((header.nav), (item) => { %>
-      <a class="btn btn-white" data-scroll data-waved="light" href="<%= item.id %>"><%= item.text %></a>
+      <a class="btn btn-white" <%= header.scroll ? 'data-scroll' : '' %> data-waved="light" href="<%= item.id %>"><%= item.text %></a>
       <% }) %>
     </nav>
-    <a class="btn btn-white font-bold text-14 sm:text-16 md:text-20" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
+    <a class="btn btn-white <%= header.btn ? 'hidden lg:flex' : '' %> font-bold text-14 sm:text-16 md:text-20" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
     <% if (header.btn) { %>
-    <a class="btn btn-white btn-lg btn-contur hidden lg:flex" data-waved="light" href="" target="_blank">Задать вопрос</a>
+    <a class="btn btn-white btn-sm sm:btn-lg btn-contur text-12 sm:text-14 min-w-max" data-waved="light" href="" target="_blank">Задать вопрос</a>
     <% } %>
   </header>
   <% } %>
 
-  <% if (data.page !== 'index' && data.page !== '404') { %>
+  <% if (data.page !== 'index') { %>
   <!-- Меню -->
 
   <div class="menu fixed inset-0 z-6 invisible opacity-0 duration-1" data-sidebar="close" data-sidebar-resize="xl" id="mobile-menu">
-    <div class="menu__content flex flex-col bg-primary invisible opacity-0 overflow-auto backdrop-blur-sm w-full max-w-[375px] h-full duration-3">
-      <div class="menu__head flex items-center justify-between gap-2 border-b border-solid border-white p-4 duration-5 delay-3">
-        <a class="btn btn-white w-20" data-waved="light" href="/">
-          <%= picture({src: header.logo, format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
-        </a>
-        <button class="btn btn-white text-24" data-sidebar-close="mobile-menu" data-waved="light">
+    <div class="menu__content flex flex-col bg-white invisible opacity-0 overflow-auto backdrop-blur-sm w-full max-w-[375px] h-full duration-3">
+      <div class="flex items-center justify-between gap-8 p-4">
+        <button class="btn btn-black text-32 rounded-max" data-sidebar-close="mobile-menu" data-waved="light">
           <%= icon({id: 'close'}) %>
         </button>
+        <a class="btn btn-black w-20" data-waved="light" href="/">
+          <%= picture({src: header.logoDark, format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
+        </a>
+        <a class="btn btn-black font-bold text-14 ml-auto" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
       </div>
-      <div class="menu__nav flex flex-col items-start gap-4 text-white invisible opacity-0 pt-4 pb-10 px-4 duration-9 delay-5">
+      <div class="flex flex-col items-start gap-8 py-10 px-4">
         <% _.forEach((header.nav), (item) => { %>
-        <a class="hover:underline underline-offset-4 text-20" href="<%= item.id %>"><%= item.text %></a>
+        <a class="hover:underline underline-offset-4 text-16 leading-1" <%= header.scroll ? 'data-scroll' : '' %> href="<%= item.id %>"><%= item.text %></a>
         <% }) %>
       </div>
-      <div class="menu__footer invisible opacity-0 mt-auto px-4 pt-4 pb-10 duration-5 delay-9">
-        <div class="flex flex-col items-start gap-5">
-          <a class="btn btn-white font-bold text-20" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
+      <div class="bg-primary text-white mt-auto py-8 px-4">
+        <div class="flex items-center gap-9 border-b border-solid border-white border-opacity-20 pb-10 mb-10">
+          <%= picture({src: header.logo, format: '.png', webp: true, classes: 'w-24 min-w-[96px]', data: false, loading: 'auto'}) %>
+          <p class="font-normal text-12 leading-3 opacity-40"><%= header.text %></p>
+        </div>
+        <div class="flex flex-col gap-10">
+          <ul class="flex flex-col gap-4">
+            <li class="font-medium uppercase text-16">ООО ВИАС</li>
+            <li class="font-medium uppercase text-14">ИНН 7706549902</li>
+            <li class="font-medium uppercase text-14">ОГРН 1047796657116</li>
+          </ul>
+          <div class="flex flex-col items-start">
+            <h3 class="font-normal text-20 leading-3 mb-6">Навигация</h3>
+            <nav class="flex flex-col items-start gap-4">
+              <a class="btn btn-white text-14 opacity-80" data-waved="light" href="">Семейный ресторан</a>
+              <a class="btn btn-white text-14 opacity-80" data-waved="light" href="">Бассейн с пляжным клубом</a>
+              <a class="btn btn-white text-14 opacity-80" data-waved="light" href="">Ночной клуб</a>
+              <a class="btn btn-white text-14 opacity-80" data-waved="light" href="">Контакты</a>
+              <a class="btn btn-white text-14 opacity-80" data-waved="light" href="">Организация мероприятий</a>
+              <a class="btn btn-white text-14 opacity-80" data-waved="light" href="">Другие проекты «Laguna Family»</a>
+            </nav>
+          </div>
+          <div class="flex flex-col items-start">
+            <h3 class="font-normal text-20 leading-3 mb-6">Контакты</h3>
+            <p class="font-normal text-14 leading-4 mb-5">Россия, Краснодарский край, <br>Геленджик, Голубая бухта, ул. Стартовая 1</p>
+            <a class="btn btn-white text-20 mb-5" data-waved="light" href="tel: +7 (928) 237-72-00">
+              <span class="text-20 opacity-40 mr-2">
+                <%= icon({id: 'phone'}) %>
+              </span>
+              +7 (928) 237-72-00
+            </a>
+            <a class="btn btn-white text-14" data-waved="light" href="mailto: golfrest@laguna-family.rest">
+              <span class="text-20 opacity-40 mr-2">
+                <%= icon({id: 'email'}) %>
+              </span>
+              golfrest@laguna-family.rest
+            </a>
+          </div>
           <% if (header.btn) { %>
           <a class="btn btn-white btn-lg btn-contur w-full" data-waved="light" href="" target="_blank">Задать вопрос</a>
           <% } %>
@@ -119,4 +215,5 @@
       </div>
     </div>
   </div>
+  <% } %>
   <% } %>

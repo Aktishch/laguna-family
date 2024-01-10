@@ -1,7 +1,7 @@
 import fancybox from './ts/fancybox'
 import sliderSwiper from './ts/slider-swiper'
 // import yandexMap from './ts/yandex-map'
-// import airDatepicker from './ts/air-datepicker'
+import airDatepicker from './ts/air-datepicker'
 // import smoothScroll from './ts/smooth-scroll'
 import scrollHeader from './ts/scroll-header'
 import currentTab from './ts/current-tab'
@@ -27,15 +27,15 @@ import movement from './ts/movement'
 // import outNumber from './ts/out-number'
 // import writeText from './ts/write-text'
 // import downloadFiles from './ts/download-files'
-// import submitHandler from './ts/submit-handler'
+import submitHandler from './ts/submit-handler'
 // import dataSave from './ts/data-save'
 // import dragAndDrop from './ts/drag-and-drop'
 // import choiceFile from './ts/choice-file'
 // import copyLink from './ts/copy-link'
-// import inputs from './ts/inputs'
-// import phoneMask from './ts/phone-mask'
+import inputs from './ts/inputs'
+import phoneMask from './ts/phone-mask'
 // import password from './ts/password'
-// import quantity from './ts/quantity'
+import quantity from './ts/quantity'
 // import range from './ts/range'
 // import player from './ts/player'
 // import basket from './ts/basket'
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', ((): void => {
   fancybox()
   sliderSwiper()
   // yandexMap()
-  // airDatepicker()
+  airDatepicker()
   currentTab()
   currentYear()
   // smoothScroll()
@@ -79,15 +79,15 @@ window.addEventListener('DOMContentLoaded', ((): void => {
   // filter()
   // outNumber()
   // writeText()
-  // submitHandler(downloadFiles())
+  submitHandler()
   // dataSave()
   // dragAndDrop()
   // choiceFile()
   // copyLink()
-  // inputs()
-  // phoneMask()
+  inputs()
+  phoneMask()
   // password()
-  // quantity()
+  quantity()
   // range()
   // player()
   // basket()

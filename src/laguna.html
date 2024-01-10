@@ -1,0 +1,220 @@
+<%
+  var data = {
+    page: 'laguna',
+    title: 'Laguna',
+    status: true
+  }
+
+  var icon = _.template(require('./components/icon.html').default)
+  var picture = _.template(require('./components/picture.html').default)
+  var loader = _.template(require('./components/loader.html').default)({icon: icon({id: 'loader'})})
+  var preloader = require('./components/preloader.html').default
+  var header = _.template(require('./includes/header.html').default)
+  var events = _.template(require('./includes/events.html').default)
+  var feedback = _.template(require('./includes/feedback.html').default)
+  var footer = _.template(require('./includes/footer.html').default)
+%>
+
+<%= header({data, loader, preloader, icon, picture}) %>
+
+<!-- Главный блок -->
+
+<main class="main container flex items-center justify-center relative bg-primary overflow-hidden min-h-[600px] sm:min-h-[700px] lg:min-h-[800px] xl:min-h-[960px] pt-36 lg:pt-52">
+  <div class="main__gradient absolute inset-0">
+    <div class="pack h-full duration-10 anim anim-decrease" data-anim="hidden">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/main-bg-laguna', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="flex flex-col items-center justify-center relative z-1 text-center text-white">
+    <%= picture({src: 'img/pictures/main-logo-laguna', format: '.png', webp: true, classes: 'block w-full max-w-[230px] lg:max-w-[420px] mb-16 lg:mb-20 xl:mb-44 ease-linear duration-4 anim anim-up', data: 'data-anim="hidden"', loading: 'auto'}) %>
+    <h1 class="font-normal text-32 sm:text-40 lg:text-subtitle leading-3 mb-3 sm:mb-2 ease-linear duration-4 delay-1 anim anim-up" data-anim="hidden">LAGUNA</h1>
+    <h3 class="font-normal text-20 lg:text-24 leading-3 mb-10 ease-linear duration-6 delay-2 anim anim-up" data-anim="hidden">Развлекательный комплекс</h3>
+    <div class="ease-linear duration-6 delay-3 anim anim-up" data-anim="hidden">
+      <button class="btn btn-white btn-lg btn-fill btn-glow text-black" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
+    </div>
+  </div>
+</main>
+
+<!-- Комплекс -->
+
+<% var complex = [
+  {
+    icon: 'sun',
+    text: 'Панорамный вид на Черное море и возможность выхода к морю'
+  },
+  {
+    icon: 'build',
+    text: 'В центре города – на Центральной набережной города-курорта'
+  },
+  {
+    icon: 'chef',
+    text: 'Изысканная кухня от шеф-повара Хачатура Антоняна'
+  },
+  {
+    icon: 'point',
+    text: 'Разнообразие развлечений – в одном месте'
+  },
+  {
+    icon: 'like',
+    text: 'Высокий уровень сервиса'
+  },
+  {
+    icon: 'confetti',
+    text: 'Организации мероприятий любого формата и масшаба'
+  }
+] %>
+
+<section class="container container-xs relative overflow-hidden" id="about">
+  <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-right" data-anim="hidden">
+    <div class="pack pack-rect-lg bg-grey w-full max-w-[1190px] sm:h-full sm:ml-auto">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/complex', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="relative bg-white sm:w-full sm:max-w-[620px] pt-2 sm:pb-2 pl-2 sm:pr-2 mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-0 ml-2 sm:ml-0 duration-6 anim anim-left" data-anim="hidden">
+    <div class="border border-solid border-second py-6 sm:py-9 lg:py-14 px-4 sm:px-7">
+      <h3 class="font-normal text-16 leading-3 opacity-40 mb-3 sm:mb-4">Развлекательный комплекс «Лагуна»</h3>
+      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-10">О комплексе</h2>
+      <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-10">
+        Развлекательный комплекс ЛАГУНА – пространство для комфортного отдыха и развлечения всей семьи.
+      </p>
+      <ul class="flex flex-col gap-4 mb-8 sm:mb-12">
+        <% _.forEach((complex), (item) => { %>
+        <li class="flex items-center">
+          <span class="text-24 mr-3">
+            <%= icon({id: item.icon}) %>
+          </span>
+          <p class="font-normal text-14 sm:text-16 leading-3"><%= item.text %></p>
+        </li>
+        <% }) %>
+      </ul>
+      <button class="btn btn-primary btn-lg btn-fill gap-1 w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
+    </div>
+  </div>
+</section>
+
+<!-- Здание -->
+
+<section class="building container container-xs bg-primary text-white overflow-hidden">
+  <h2 class="font-normal text-center sm:text-left text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-12 duration-6 anim anim-up" data-anim="hidden">3 этажа для отдыха <br class="sm:hidden"> и развлечений</h2>
+  <div class="building-slider">
+    <div class="swiper overflow-visible">
+      <div class="swiper-wrapper">
+        <% for (var i = 0; i < 3; i++) { %>
+        <div class="swiper-slide h-auto">
+          <div class="card card-active h-full pb-1">
+            <div class="pack pack-box bg-grey mb-8" data-movement="light">
+              <%= loader %>
+              <%= picture({src: 'img/pictures/complex', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
+            </div>
+            <div class="card-content">
+              <h4 class="font-medium text-20 sm:text-24 leading-3 mb-4">Семейный ресторан с детской игровой комнатой</h4>
+              <p class="font-normal text-14 sm:text-16 leading-4 opacity-60 mb-6 lg:mb-10">
+                Ресторан европейской кухни с панорамным видом как на бухту Геленджика, так и на шикарную морскую набережную города.
+              </p>
+              <button class="btn btn-white btn-lg btn-contur w-full sm:w-max mt-auto" data-waved="light">Подробнее</button>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+</section>
+
+<!-- События -->
+
+<%= events({loader, icon, picture, theme: 'auto', title: 'Ближайшие события'}) %>
+
+<!-- Жизнь комплекса -->
+
+<% var life = ['row-2', '', 'row-2', '', '', 'row-2', 'row-2', ''] %>
+
+<section class="container container-xs bg-primary text-white" id="gallery">
+  <h2 class="font-normal text-center sm:text-left text-32 sm:text-38 lg:text-46 leading-3 mb-8 md:mb-11 xl:mb-16 duration-6 anim anim-up" data-anim="hidden">Жизнь комплекса</h2>
+  <div class="grid grid-cols-2 md:grid-cols-3 grid-flow-dense auto-rows-[100px] sm:auto-rows-[180px] lg:auto-rows-[240px] gap-2 sm:gap-4">
+    <% for (var i = 0; i < life.length; i++) { %>
+    <div class="<%= life[i] %> duration-6 anim anim-up" data-anim="hidden">
+      <a class="pack bg-grey h-full" data-movement="light" data-fancybox="complex" href="img/pictures/complex.jpg">
+        <%= loader %>
+        <%= picture({src: 'img/pictures/complex', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
+      </a>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- Организация мероприятий -->
+
+<% var complex = [
+  {
+    icon: 'cake',
+    text: 'Дни рождения'
+  },
+  {
+    icon: 'infinity',
+    text: 'Выездные регистрации'
+  },
+  {
+    icon: 'bear',
+    text: 'Детские праздники'
+  },
+  {
+    icon: 'wine',
+    text: 'Корпоративные события'
+  },
+  {
+    icon: 'notes',
+    text: 'Фестивали'
+  },
+  {
+    icon: 'microphone',
+    text: 'Концерты'
+  },
+  {
+    icon: 'confetti',
+    text: 'Вечеринки'
+  },
+  {
+    icon: 'wallpaper',
+    text: 'Выставки'
+  }
+] %>
+
+<section class="container container-xs relative overflow-hidden" id="organization">
+  <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-right" data-anim="hidden">
+    <div class="pack pack-rect-lg bg-grey w-full max-w-[1030px] sm:h-full sm:ml-auto">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/group', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="relative bg-white sm:w-full sm:max-w-[545px] pt-2 sm:pb-2 pl-2 sm:pr-2 mt-64 sm:mt-5 xl:mt-10 sm:mb-5 xl:mb-0 ml-2 sm:ml-0 duration-6 anim anim-left" data-anim="hidden">
+    <div class="border border-solid border-second py-6 sm:py-9 lg:py-14 px-4 sm:px-7">
+      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-3 sm:mb-6">Организация мероприятий</h2>
+      <h3 class="font-normal text-16 sm:text-20 lg:text-24 leading-2 mb-8 sm:mb-12">в развлекательном комплексе</h3>
+      <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-10">
+        Пространство развлекательного комплекса позволяет проводить на своей территории мероприятия любого формата и масштаба.
+      </p>
+      <ul class="grid grid-cols-2 gap-3 mb-6 sm:mb-10 xl:mb-16">
+        <% _.forEach((complex), (item) => { %>
+        <li class="flex items-center">
+          <span class="text-24 mr-3">
+            <%= icon({id: item.icon}) %>
+          </span>
+          <p class="font-normal text-14 sm:text-16 leading-3"><%= item.text %></p>
+        </li>
+        <% }) %>
+      </ul>
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
+        <a class="btn btn-black btn-lg btn-fill flex-grow" data-waved="light" href="" download>Скачать презентацию</a>
+        <button class="btn btn-black btn-lg btn-contur flex-grow" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Оставить заявку</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Обратная связь -->
+
+<%= feedback({loader, picture}) %>
+
+<%= footer({data, loader, icon, picture}) %>

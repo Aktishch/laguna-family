@@ -11,6 +11,7 @@
   var preloader = require('./components/preloader.html').default
   var header = _.template(require('./includes/header.html').default)
   var events = _.template(require('./includes/events.html').default)
+  var feedback = _.template(require('./includes/feedback.html').default)
   var footer = _.template(require('./includes/footer.html').default)
 %>
 
@@ -30,7 +31,7 @@
     <h1 class="font-normal text-32 sm:text-40 lg:text-subtitle leading-3 mb-3 sm:mb-2 ease-linear duration-4 delay-1 anim anim-up" data-anim="hidden">Ресторан <br class="md:hidden"> CLUB HOUSE</h1>
     <h3 class="font-normal text-20 lg:text-24 leading-3 mb-10 ease-linear duration-6 delay-2 anim anim-up" data-anim="hidden">в Геленджик Гольф Резорт</h3>
     <div class="ease-linear duration-6 delay-3 anim anim-up" data-anim="hidden">
-      <button class="btn btn-white btn-lg btn-fill btn-glow text-black" data-waved="dark">Забронировать столик</button>
+      <button class="btn btn-white btn-lg btn-fill btn-glow text-black" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
     </div>
   </div>
 </main>
@@ -98,7 +99,7 @@
         <%= picture({src: 'img/pictures/cook', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
       </div>
       <div class="flex flex-col gap-2 md:gap-3 w-full xl:max-w-[350px]">
-        <div class="concept__grid grid grid-cols-2 auto-rows-[115px] md:auto-rows-[230px] gap-2 md:gap-3 relative">
+        <div class="concept__grid grid grid-cols-2 grid-flow-dense auto-rows-[115px] md:auto-rows-[230px] gap-2 md:gap-3 relative">
           <div class="col-2 pack pack-rect-sm bg-grey">
             <%= loader %>
             <%= picture({src: 'img/pictures/dish-1', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
@@ -161,7 +162,7 @@
       <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
         Идеальная площадка для проведения мероприятий любого формата.
       </p>
-      <button class="btn btn-primary btn-lg btn-fill gap-1 w-full sm:w-max" data-waved="light">
+      <button class="btn btn-primary btn-lg btn-fill gap-1 w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">
         Оставить заявку
         <span class="hidden xs:inline-block">на мероприятие</span>
       </button>
@@ -186,7 +187,7 @@
         Уютное светлое пространство с панорамным видом на гольф-поле и Геленджикскую бухту. Гости могут одновременно наслаждаться кулинарными шедеврами и живописными видами.
       </p>
     </div>
-    <div class="grid grid-cols-2 lg:grid-cols-3 auto-rows-[110px] sm:auto-rows-[180px] lg:auto-rows-[250px] gap-2 sm:gap-5 lg:gap-8">
+    <div class="grid grid-cols-2 lg:grid-cols-3 grid-flow-dense auto-rows-[110px] sm:auto-rows-[180px] lg:auto-rows-[250px] gap-2 sm:gap-5 lg:gap-8">
       <% for (var i = 0; i < 5; i++) { %>
       <div class="<%= i === 1 ? 'row-2' : '' %> duration-6 anim anim-up" data-anim="hidden">
         <a class="pack bg-grey h-full" data-movement="light" data-fancybox="restaurant" href="img/pictures/hall.jpg">
@@ -216,7 +217,7 @@
           <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
             Уютная камерная площадка, которая отлично подходит для небольших частных торжественных событий, а так же деловых встреч и конференций.
           </p>
-          <button class="btn btn-primary btn-lg btn-fill gap-1 w-full sm:w-max" data-waved="light">
+          <button class="btn btn-primary btn-lg btn-fill gap-1 w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">
             Оставить заявку
             <span class="hidden xs:inline-block">на мероприятие</span>
           </button>
@@ -287,7 +288,7 @@
       </li>
       <% }) %>
     </ul>
-    <div class="grid grid-cols-2 lg:grid-cols-3 auto-rows-[110px] sm:auto-rows-[180px] lg:auto-rows-[250px] gap-2 sm:gap-5 lg:gap-8">
+    <div class="grid grid-cols-2 lg:grid-cols-3 grid-flow-dense auto-rows-[110px] sm:auto-rows-[180px] lg:auto-rows-[250px] gap-2 sm:gap-5 lg:gap-8">
       <% for (var i = 0; i < 5; i++) { %>
       <div class="<%= i === 1 ? 'row-2' : '' %> duration-6 anim anim-up" data-anim="hidden">
         <a class="pack bg-grey h-full" data-movement="light" data-fancybox="club" href="img/pictures/hall.jpg">
@@ -308,7 +309,7 @@
 
 <% var organization = [
   {
-    icon: 'confetti',
+    icon: 'cake',
     text: 'Дни рождения'
   },
   {
@@ -332,7 +333,7 @@
     text: 'Конференции'
   },
   {
-    icon: 'glass',
+    icon: 'confetti',
     text: 'Вечеринки'
   },
   {
@@ -374,10 +375,14 @@
       </ul>
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
         <a class="btn btn-black btn-lg btn-light flex-grow" data-waved="dark" href="" download>Скачать презентацию</a>
-        <button class="btn btn-white btn-lg btn-contur flex-grow" data-waved="light" download>Оставить заявку</button>
+        <button class="btn btn-white btn-lg btn-contur flex-grow" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Оставить заявку</button>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Обратная связь -->
+
+<%= feedback({loader, picture}) %>
 
 <%= footer({data, loader, icon, picture}) %>

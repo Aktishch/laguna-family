@@ -1,0 +1,91 @@
+<%
+  var icon = _.template(require('../components/icon.html').default)
+  var picture = _.template(require('../components/picture.html').default)
+  var loader = _.template(require('../components/loader.html').default)({icon: icon({id: 'loader'})})
+%>
+
+<dialog class="dialog dialog-xl p-0">
+  <div class="grid grid-cols-1 lg:grid-cols-2">
+    <div class="py-10 sm:py-16 px-4 xs:px-10 sm:px-16">
+      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-7 xl:mb-12">Оставить заявку</h2>
+      <form class="form mb-6" data-form="submit">
+        <div class="grid grid-cols-1 xs:grid-cols-2 gap-5 mb-7 lg:mb-12">
+          <label class="xs:col-2 form-label" data-label="input">
+            <span class="font-medium text-16 leading-1 mb-3">Формат меропрития</span>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <select class="input input-black input-lg" data-input="select" name="select">
+                  <option value="empty" disabled hidden selected>Выберите мероприятие</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div class="form-icon form-icon-right text-24 opacity-40">
+                <%= icon({id: 'arrow'}) %>
+              </div>
+              <span class="form-error" data-error>Пожалуйста, выберите меропритие!</span>
+            </div>
+          </label>
+          <label class="xs:col-2 form-label" data-label="input">
+            <span class="font-medium text-16 leading-1 mb-3">Имя</span>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-black input-lg" data-input="name" type="text" placeholder="Напишите имя..." name="name">
+              </div>
+              <span class="form-error" data-error>Пожалуйста, введите ваше имя!</span>
+            </div>
+          </label>
+          <label class="xs:col-2 form-label" data-label="input">
+            <span class="font-medium text-16 leading-1 mb-3">Ваш телефон</span>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-black input-lg" data-input="tel" type="tel" placeholder="+ 7 (_ _ _) _ _ _ - _ _ - _ _" name="tel">
+              </div>
+              <span class="form-error" data-error>Пожалуйста, введите ваш номер!!</span>
+            </div>
+          </label>
+          <label class="xs:col-2 form-label" data-label="input">
+            <span class="font-medium text-16 leading-1 mb-3">Дата</span>
+            <div class="form-wrapper">
+              <div class="input-cover">
+                <input class="input input-black input-lg" data-input="calendar" data-position="top left" type="text" placeholder="_ _._ _._ _ _ _" name="date">
+              </div>
+              <div class="form-icon form-icon-right text-24 opacity-40">
+                <%= icon({id: 'calendar'}) %>
+              </div>
+              <span class="form-error" data-error>Пожалуйста, укажите дату!</span>
+            </div>
+          </label>
+          <div class="flex flex-col">
+            <span class="font-medium text-16 leading-1 mb-3">Взрослые</span>
+            <div class="quantity" data-quantity>
+              <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-decrease data-waved="dark" type="button">-</button>
+              <div class="quantity-cover input-cover">
+                <input class="quantity-input input" data-input="number" type="text" value="1" maxlength="3" name="quantity">
+              </div>
+              <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-increase data-waved="dark" type="button">+</button>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-medium text-16 leading-1 mb-3">Дети (от 3 до 14 лет)</span>
+            <div class="quantity" data-quantity>
+              <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-decrease data-waved="dark" type="button">-</button>
+              <div class="quantity-cover input-cover">
+                <input class="quantity-input input" data-input="number" type="text" value="1" maxlength="3" name="quantity">
+              </div>
+              <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-increase data-waved="dark" type="button">+</button>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg btn-fill w-full xs:w-max" data-waved="light" type="submit">Оставить заявку на мероприятие</button>
+      </form>
+      <div class="hover:underline underline-offset-4 text-12 leading-2 opacity-80 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных</div>
+    </div>
+    <div class="hidden lg:block pack pack-rect-md bg-grey">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/feedback-bg', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+</dialog>
