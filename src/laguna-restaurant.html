@@ -11,7 +11,6 @@
   var preloader = require('./components/preloader.html').default
   var header = _.template(require('./includes/header.html').default)
   var events = _.template(require('./includes/events.html').default)
-  var feedback = _.template(require('./includes/feedback.html').default)
   var footer = _.template(require('./includes/footer.html').default)
 %>
 
@@ -44,7 +43,7 @@
       <%= picture({src: 'img/pictures/restaurant', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
     </div>
   </div>
-  <div class="relative bg-white sm:w-full sm:max-w-[550px] pt-2 sm:pb-2 sm:pl-2 pr-2  mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-20 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
+  <div class="relative bg-white sm:w-full sm:max-w-[550px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-20 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
     <div class="border border-solid border-second py-8 sm:py-10 lg:py-16 xl:py-32 px-4 sm:px-7 lg:px-16">
       <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-10">О ресторане</h2>
       <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">

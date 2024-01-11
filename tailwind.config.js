@@ -44,7 +44,7 @@ module.exports = {
       },
 
       red: {
-        DEFAULT: '#be1b1b',
+        DEFAULT: '#C03535',
       },
     },
 
@@ -219,7 +219,6 @@ module.exports = {
     require('./plugins/form'),
     require('./plugins/input'),
     require('./plugins/button'),
-    // require('./plugins/switch'),
     require('./plugins/animation'),
   ],
 }

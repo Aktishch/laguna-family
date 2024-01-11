@@ -1,0 +1,18 @@
+<% var icon = _.template(require('../components/icon.html').default) %>
+
+<dialog class="dialog dialog-xs p-0">
+  <div class="relative overflow-hidden">
+    <div class="absolute bottom-0 -right-full animate-pulse">
+      <span class="text-second text-[100rem] opacity-50">
+        <%= icon({id: 'lines'}) %>
+      </span>
+    </div>
+    <div class="flex flex-col items-center justify-center relative text-center py-16 sm:py-20 px-4 sm:px-8">
+      <span class="text-second text-404 mb-8 sm:mb-14">
+        <%= icon({id: 'like'}) %>
+      </span>
+      <h2 class="font-medium text-24 leading-2 mb-3">Заявка принята!</h2>
+      <p class="font-normal text-16 leading-3 opacity-60">Скоро наш менеджер свяжется с вами</p>
+    </div>
+  </div>
+</dialog>

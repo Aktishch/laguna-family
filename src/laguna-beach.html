@@ -1,0 +1,208 @@
+<%
+  var data = {
+    page: 'laguna-beach',
+    title: 'Laguna beach',
+    status: true
+  }
+
+  var icon = _.template(require('./components/icon.html').default)
+  var picture = _.template(require('./components/picture.html').default)
+  var loader = _.template(require('./components/loader.html').default)({icon: icon({id: 'loader'})})
+  var preloader = require('./components/preloader.html').default
+  var header = _.template(require('./includes/header.html').default)
+  var footer = _.template(require('./includes/footer.html').default)
+%>
+
+<%= header({data, loader, preloader, icon, picture}) %>
+
+<!-- Главный блок -->
+
+<main class="main container flex items-center justify-center relative bg-primary overflow-hidden min-h-[600px] sm:min-h-[700px] lg:min-h-[800px] xl:min-h-[960px] pt-36 lg:pt-52">
+  <div class="main__gradient absolute inset-0">
+    <div class="pack h-full duration-10 anim anim-decrease" data-anim="hidden">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/beach-bg-laguna', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="flex flex-col items-center justify-center relative z-1 text-center text-white">
+    <%= picture({src: 'img/pictures/beach-logo-laguna', format: '.png', webp: true, classes: 'block w-full max-w-[230px] lg:max-w-[420px] mb-16 lg:mb-20 xl:mb-44 ease-linear duration-4 anim anim-up', data: 'data-anim="hidden"', loading: 'auto'}) %>
+    <h1 class="font-normal text-32 sm:text-40 lg:text-subtitle leading-3 mb-10 sm:mb-8 ease-linear duration-4 delay-1 anim anim-up" data-anim="hidden">Бассейн с пляжным клубом</h1>
+    <div class="ease-linear duration-6 delay-3 anim anim-up" data-anim="hidden">
+      <button class="btn btn-white btn-lg btn-fill btn-glow text-black" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать</button>
+    </div>
+  </div>
+</main>
+
+<!-- Пляжный клуб -->
+
+<% var complex = [
+  {
+    icon: 'sun',
+    text: '<span class="font-medium">Свой выход к морю</span> и парковка для маломерных судов'
+  },
+  {
+    icon: 'dinner',
+    text: '<span class="font-medium">Ресторанное обслуживание</span> на всей территории клуба'
+  },
+  {
+    icon: 'bear',
+    text: '<span class="font-medium">Анимационные программы</span> для детей и взрослых'
+  },
+  {
+    icon: 'confetti',
+    text: '<span class="font-medium">Горячие вечеринки</span> с модными ди-джеями'
+  }
+] %>
+
+<section class="container container-xs relative overflow-hidden" id="halls">
+  <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-left" data-anim="hidden">
+    <div class="pack pack-rect-lg bg-grey w-full max-w-[1050px] sm:h-full">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/beach', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="relative bg-white sm:w-full sm:max-w-[550px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-10 sm:mb-5 xl:mb-10 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
+    <div class="border border-solid border-second py-6 sm:py-10 xl:py-16 px-4 sm:px-8">
+      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-2 sm:mb-4">Пляжный клуб</h2>
+      <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-10">
+        это эпицентр летнего отдыха в Геленджике!
+      </p>
+      <p class="font-normal text-14 sm:text-16 leading-4 mb-5">
+        <span class="font-medium">Подогреваемый бассейн</span> <br>
+        с уникальной системой очистки и фильтрации воды, разными глубинами, подходящий для детей и взрослых, площадью 250 квадратных метров
+      </p>
+      <p class="font-normal text-14 sm:text-16 leading-4 mb-6 sm:mb-12">
+        <span class="font-medium">Любые форматы размещения на пляже</span> <br>
+        комфортабельные лежаки; удобные, большие кровати; двухуровневые кабаносы с защитой от солнечных лучей; банкетки с ресторанной зоной, комнатой отдыха и выходом к пляжу
+      </p>
+      <ul class="flex flex-col gap-4">
+        <% _.forEach((complex), (item) => { %>
+        <li class="flex items-center">
+          <span class="text-24 mr-3">
+            <%= icon({id: item.icon}) %>
+          </span>
+          <p class="font-normal text-14 sm:text-16 leading-3"><%= item.text %></p>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Прайс -->
+
+<section class="container container-xs relative bg-primary text-white overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="absolute -top-[480px] -right-40 -scale-x-100 animate-pulse">
+      <span class="text-second text-[100rem] opacity-20">
+        <%= icon({id: 'lines'}) %>
+      </span>
+    </div>
+  </div>
+  <div class="container flex items-end justify-center md:justify-end absolute inset-0 py-0">
+    <%= picture({src: 'img/pictures/price', format: '.png', webp: true, classes: 'block w-full max-w-[530px] -ml-4 sm:ml-0 lg:mr-0 xl:mr-20 duration-6 anim anim-left', data: 'data-anim="hidden"', loading: 'auto'}) %>
+  </div>
+  <div class="relative w-full sm:max-w-[410px] mb-60 xs:mb-80 sm:mb-96 lg:mb-0">
+    <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-2 sm:mb-4 duration-6 anim anim-right" data-anim="hidden">Прайс-лист бассейна</h2>
+    <p class="font-normal text-14 sm:text-16 leading-4 mb-10 sm:mb-12 duration-6 anim anim-right" data-anim="hidden">
+      можете ознакомиться с нашими ценами
+    </p>
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 duration-6 anim anim-up" data-anim="hidden">
+      <a class="btn btn-black btn-lg btn-light flex-grow" data-waved="dark" href="">Смотреть прайс</a>
+      <button class="btn btn-white btn-lg btn-contur flex-grow" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать место</button>
+    </div>
+  </div>
+</section>
+
+<!-- Ресторанное обслуживание -->
+
+<section class="container container-xs overflow-hidden">
+  <div class="flex flex-col lg:flex-row lg:justify-between lg:gap-5 xl:gap-8">
+    <div class="w-full lg:max-w-[800px] duration-6 anim anim-right" data-anim="hidden">
+      <div class="pack pack-rect-lg sm:pack-rect-sm bg-grey sm:h-full">
+        <%= loader %>
+        <%= picture({src: 'img/pictures/dish-4', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+      </div>
+    </div>
+    <div class="flex flex-col gap-5 relative lg:static xl:gap-8 w-full lg:max-w-[430px]">
+      <div class="bg-white pt-2 lg:pt-0 pr-2 lg:pr-0 -mt-12 sm:-mt-8 lg:-ml-16 mr-2 lg:mr-0">
+        <div class="border border-solid border-second py-6 sm:py-10 xl:py-20 pl-4 sm:pl-10 lg:pl-16 xl:pl-20 pr-4 sm:pr-10 lg:pr-16">
+          <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-10">Ресторанное обслуживание</h2>
+          <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
+            На территории всего пляжного клуба действует ресторанное обслуживание. Наши гости могут насладиться авторскими коктейлями, а так же изысканными блюдами от шеф-повара Хачатура Антоняна
+          </p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+            <a class="btn btn-primary btn-lg btn-fill" data-waved="dark" href="">Меню</a>
+            <a class="btn btn-primary btn-lg btn-contur" data-waved="light" href="">Барная карта</a>
+          </div>
+        </div>
+      </div>
+      <div class="pack pack-rect-md sm:pack-rect-sm bg-grey duration-6 anim anim-up" data-anim="hidden">
+        <%= loader %>
+        <%= picture({src: 'img/pictures/dish-5', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Галерея -->
+
+<% var gallery = [
+  {
+    col: '',
+    row: 'row-2 sm:row-1'
+  },
+  {
+    col: '',
+    row: 'row-2 sm:row-1'
+  },
+  {
+    col: 'col-2 xl:col-1',
+    row: 'row-3 sm:row-1'
+  },
+  {
+    col: 'col-2 xl:col-3',
+    row: 'row-3 sm:row-2'
+  },
+  {
+    col: '',
+    row: 'row-4 sm:row-2'
+  },
+  {
+    col: '',
+    row: 'row-2 sm:row-1'
+  },
+  {
+    col: '',
+    row: 'row-4 sm:row-2'
+  },
+  {
+    col: '',
+    row: 'row-2 sm:row-1'
+  }
+] %>
+
+<section class="container container-xs bg-grey">
+  <h2 class="font-normal text-center sm:text-left text-32 sm:text-38 lg:text-46 leading-3 mb-8 sm:mb-12 duration-6 anim anim-up" data-anim="hidden">Галерея событий</h2>
+  <div class="grid grid-cols-2 xl:grid-cols-3 grid-flow-dense auto-rows-[50px] sm:auto-rows-[180px] md:auto-rows-[250px] gap-2 sm:gap-4">
+    <% for (var i = 0; i < gallery.length; i++) { %>
+    <div class="<%= gallery[i].col %> <%= gallery[i].row %> duration-6 anim anim-up" data-anim="hidden">
+      <a class="pack bg-grey h-full" data-movement="light" data-fancybox="gallery" href="img/pictures/beach.jpg">
+        <%= loader %>
+        <%= picture({src: 'img/pictures/beach', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
+        <% if (i === 3) { %>
+        <div class="flex items-center justify-center absolute inset-0 bg-black bg-opacity-40 pointer-events-none">
+          <button class="btn btn-second bg-white text-50 md:text-404 rounded-max" data-waved="light">
+            <span class="-m-2 md:-m-5">
+              <%= icon({id: 'play'}) %>
+            </span>
+          </button>
+        </div>
+        <% } %>
+      </a>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<%= footer({data, loader, icon, picture}) %>
