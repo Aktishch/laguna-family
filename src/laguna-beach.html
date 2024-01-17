@@ -56,13 +56,13 @@
 
 <section class="container container-xs relative overflow-hidden" id="halls">
   <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-left" data-anim="hidden">
-    <div class="pack pack-rect-lg bg-grey w-full max-w-[1050px] sm:h-full">
+    <div class="pack pack-rect-lg bg-grey w-full max-w-[1000px] sm:h-full">
       <%= loader %>
       <%= picture({src: 'img/pictures/beach', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
     </div>
   </div>
-  <div class="relative bg-white sm:w-full sm:max-w-[550px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-10 sm:mb-5 xl:mb-10 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
-    <div class="border border-solid border-second py-6 sm:py-10 xl:py-16 px-4 sm:px-8">
+  <div class="relative bg-white sm:w-full sm:max-w-[540px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-10 sm:mb-5 xl:mb-10 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
+    <div class="border border-solid border-second py-6 sm:py-10 xl:py-12 px-4 sm:px-7">
       <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-2 sm:mb-4">Пляжный клуб</h2>
       <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-10">
         это эпицентр летнего отдыха в Геленджике!
@@ -75,7 +75,7 @@
         <span class="font-medium">Любые форматы размещения на пляже</span> <br>
         комфортабельные лежаки; удобные, большие кровати; двухуровневые кабаносы с защитой от солнечных лучей; банкетки с ресторанной зоной, комнатой отдыха и выходом к пляжу
       </p>
-      <ul class="flex flex-col gap-4">
+      <ul class="flex flex-col gap-4 mb-8 sm:mb-10">
         <% _.forEach((complex), (item) => { %>
         <li class="flex items-center">
           <span class="text-24 mr-3">
@@ -85,6 +85,10 @@
         </li>
         <% }) %>
       </ul>
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
+        <button class="btn btn-primary btn-lg btn-fill flex-grow" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать шезлонг</button>
+        <a class="btn btn-black btn-lg btn-contur flex-grow" data-waved="dark" href="" target="_blank">Схема бассейна</a>
+      </div>
     </div>
   </div>
 </section>

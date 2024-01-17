@@ -12,24 +12,39 @@ Swiper.defaults.touchStartPreventDefault = false
 window.Swiper = Swiper
 
 export default (): void => {
-  new window.Swiper('.services-slider .swiper', {
-    slidesPerView: 1.2,
-    spaceBetween: 16,
-    grabCursor: true,
-    breakpoints: {
-      [media.sm]: {
-        slidesPerView: 1.5,
+  const servicesSliders = document.querySelectorAll('.services-slider')
+
+  servicesSliders.forEach((element: Element): void => {
+    const servicesSlider = element as HTMLElement
+
+    if (!servicesSlider) return
+
+    const servicesSwiper = servicesSlider.querySelector('.swiper') as HTMLElement
+    const servicesPagination = servicesSlider.querySelector('.swiper-pagination') as HTMLElement
+
+    new window.Swiper(servicesSwiper, {
+      pagination: {
+        el: servicesPagination,
+        clickable: true,
       },
-      [media.md]: {
-        slidesPerView: 2,
-        spaceBetween: 28,
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+      grabCursor: true,
+      breakpoints: {
+        [media.sm]: {
+          slidesPerView: 1.5,
+        },
+        [media.md]: {
+          slidesPerView: 2,
+          spaceBetween: 28,
+        },
+        [media.xl]: {
+          slidesPerView: 3,
+          allowTouchMove: false,
+        },
       },
-      [media.xl]: {
-        slidesPerView: 3,
-        allowTouchMove: false,
-      },
-    },
-  }) as Swiper
+    }) as Swiper
+  })
 
   new window.Swiper('.events-slider .swiper', {
     navigation: {

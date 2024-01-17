@@ -123,12 +123,12 @@
   <% if (data.page === 'index') { %>
   <header class="container flex items-center justify-between gap-3 sm:gap-6 fixed z-3 top-0 left-0 right-0 bg-opacity-90 py-4 xl:py-8 duration-2" data-header>
     <div class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-0">
-      <a class="btn btn-white text-16 sm:text-20 md:text-24" href="" data-waved="light">Laguna Family</a>
+      <a class="btn btn-white text-16 sm:text-20 md:text-24" data-waved="light" data-scroll href="#projects">Laguna Family</a>
       <span class="font-normal text-white text-opacity-40 text-12 sm:text-14 md:text-16 leading-1 md:border-l md:border-solid md:border-white md:border-opacity-40 md:pl-4 md:ml-4">Семья ресторанов</span>
     </div>
     <div class="flex items-center sm:gap-8 lg:gap-14">
-      <a class="btn btn-white hidden sm:flex" data-scroll data-waved="light" href="#contacts">Контакты</a>
-      <a class="btn btn-white btn-md sm:btn-lg btn-contur text-14 sm:text-16" data-waved="light" href="" target="_blank">Задать вопрос</a>
+      <a class="btn btn-white" data-scroll data-waved="light" href="#contacts">Контакты</a>
+      <a class="btn btn-white btn-lg btn-contur hidden sm:flex" data-waved="light" data-scroll href="#projects">Проекты</a>
     </div>
   </header>
   <% } else { %>
@@ -146,7 +146,7 @@
     </nav>
     <a class="btn btn-white <%= header.btn ? 'hidden lg:flex' : '' %> font-bold text-14 sm:text-16 md:text-20" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
     <% if (header.btn) { %>
-    <a class="btn btn-white btn-sm sm:btn-lg btn-contur text-12 sm:text-14 min-w-max" data-waved="light" href="" target="_blank">Задать вопрос</a>
+    <a class="btn btn-white btn-sm sm:btn-lg btn-contur text-12 sm:text-14 min-w-max" data-waved="light" href="tel: +7 (966) 760-99-66">Задать вопрос</a>
     <% } %>
   </header>
   <% } %>
@@ -209,7 +209,7 @@
             </a>
           </div>
           <% if (header.btn) { %>
-          <a class="btn btn-white btn-lg btn-contur w-full" data-waved="light" href="" target="_blank">Задать вопрос</a>
+          <a class="btn btn-white btn-lg btn-contur w-full" data-waved="light" href="tel: +7 (966) 760-99-66">Задать вопрос</a>
           <% } %>
         </div>
       </div>

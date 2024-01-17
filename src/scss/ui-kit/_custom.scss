@@ -22,7 +22,11 @@
     @apply flex items-center justify-center static;
 
     & &-bullet {
-      @apply bg-current w-3 h-3 duration-2;
+      @apply bg-current bg-opacity-20 w-2 h-2 duration-2;
+
+      &.swiper-pagination-bullet-active {
+        @apply bg-second;
+      }
     }
   }
 

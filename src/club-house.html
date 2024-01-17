@@ -28,7 +28,7 @@
   </div>
   <div class="flex flex-col items-center justify-center relative z-1 text-center text-white">
     <%= picture({src: 'img/pictures/logo-club-house', format: '.png', webp: true, classes: 'block w-full max-w-[230px] lg:max-w-[420px] mb-16 lg:mb-20 xl:mb-44 ease-linear duration-4 anim anim-up', data: 'data-anim="hidden"', loading: 'auto'}) %>
-    <h1 class="font-normal text-32 sm:text-40 lg:text-subtitle leading-3 mb-3 sm:mb-2 ease-linear duration-4 delay-1 anim anim-up" data-anim="hidden">Ресторан <br class="md:hidden"> CLUB HOUSE</h1>
+    <h1 class="font-normal text-32 sm:text-40 lg:text-subtitle leading-3 mb-3 sm:mb-2 ease-linear duration-4 delay-1 anim anim-up" data-anim="hidden">Ресторан <br class="md:hidden"> с террасой</h1>
     <h3 class="font-normal text-20 lg:text-24 leading-3 mb-10 ease-linear duration-6 delay-2 anim anim-up" data-anim="hidden">в Геленджик Гольф Резорт</h3>
     <div class="ease-linear duration-6 delay-3 anim anim-up" data-anim="hidden">
       <button class="btn btn-white btn-lg btn-fill btn-glow text-black" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
@@ -38,24 +38,61 @@
 
 <!-- Клубный дом -->
 
+<% var club = [
+  {
+    icon: 'sun',
+    text: 'Панорамный вид на Черное море'
+  },
+  {
+    icon: 'star',
+    text: 'Закрытая охраняемая территория'
+  },
+  {
+    icon: 'routing',
+    text: 'Отдельный въезд'
+  },
+  {
+    icon: 'widget',
+    text: 'Различные по стилистике вместимости площадки'
+  },
+  {
+    icon: 'chef',
+    text: 'Изысканная кухня от шеф-повара Аделя Хаматова'
+  },
+  {
+    icon: 'confetti',
+    text: 'Помощь в организации мероприятия'
+  },
+  {
+    icon: 'like',
+    text: 'Высокий уровень сервиса'
+  },
+  {
+    icon: 'favourite',
+    text: 'Эстетичная атмосфера'
+  }
+] %>
+
 <section class="container container-xs relative overflow-hidden" id="restaurant">
   <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-right" data-anim="hidden">
-    <div class="pack pack-rect-lg bg-grey w-full max-w-[1190px] sm:h-full sm:ml-auto">
+    <div class="pack pack-rect-lg bg-grey w-full max-w-[1060px] sm:h-full sm:ml-auto">
       <%= loader %>
       <%= picture({src: 'img/pictures/club-house', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
     </div>
   </div>
-  <div class="relative bg-white sm:w-full sm:max-w-[555px] pt-2 sm:pb-2 pl-2 sm:pr-2 mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-0 ml-2 sm:ml-0 duration-6 anim anim-left" data-anim="hidden">
-    <div class="border border-solid border-second py-8 sm:py-10 lg:py-16 px-4 sm:px-7 lg:px-11">
-      <h3 class="font-normal text-16 leading-3 opacity-40 mb-3 sm:mb-4">Ресторан CLUB HOUSE</h3>
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-10">Клубный дом – жемчужина курорта</h2>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-6 sm:mb-8">
-        Роскошный и гостеприимный клубный дом — настоящая жемчужина курорта. Он расположен на территории Геленджик Гольф Резорт – уникального живописного комплекса с закрытой территорией и панорамным видом на всю Геленджикскую бухту.
-      </p>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
-        В любое время года гости могут смотреть на закат и наслаждаться сервисом высокого уровня. <br>
-        К услугам гостей ресторан европейской кухни, бар с террасой, банкетный зал, винный погреб.
-      </p>
+  <div class="relative bg-white sm:w-full sm:max-w-[475px] pt-2 sm:pb-2 pl-2 sm:pr-2 mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-0 ml-2 sm:ml-0 duration-6 anim anim-left" data-anim="hidden">
+    <div class="border border-solid border-second py-8 sm:py-10 lg:py-12 px-4 sm:px-7 lg:px-11">
+      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-10">Ресторан <br> Club House – это</h2>
+      <ul class="flex flex-col gap-4 mb-8 sm:mb-12">
+        <% _.forEach((club), (item) => { %>
+        <li class="flex items-center">
+          <span class="text-24 mr-3">
+            <%= icon({id: item.icon}) %>
+          </span>
+          <p class="font-normal text-14 sm:text-16 leading-3"><%= item.text %></p>
+        </li>
+        <% }) %>
+      </ul>
       <a class="btn btn-black btn-lg btn-contur gap-1 sm:w-max" data-waved="dark" data-fancybox href="https://www.youtube.com/watch?v=af59U2BRRAU">
         <span class="text-second text-24">
           <%= icon({id: 'play'}) %>
@@ -78,8 +115,8 @@
     </div>
   </div>
   <div class="flex flex-col xl:flex-row xl:justify-between gap-4 xl:gap-0 relative">
-    <div class="bg-primary-light relative z-1 w-full xl:max-w-[505px] p-2 xl:mt-5 xl:-mr-16 duration-6 anim anim-up" data-anim="hidden">
-      <div class="border border-solid border-second border-opacity-20 py-4 sm:py-7 lg:py-10 px-4 sm:px-8">
+    <div class="bg-primary-light relative z-1 w-full xl:max-w-[475px] p-2 xl:mt-5 xl:-mr-10 duration-6 anim anim-up" data-anim="hidden">
+      <div class="border border-solid border-second border-opacity-20 py-4 sm:py-7 lg:py-10 px-4 sm:px-7">
         <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-12">Гастрономическая концепция</h2>
         <p class="font-normal text-14 sm:text-16 leading-4 mb-6 sm:mb-8">
           Создавая меню ресторана, команда исследовала рецептуру русской кухни, а в выборе продуктов отдала предпочтение локальным и фермерским продуктам Черноморского побережья. Мы работаем с сезонными продуктами от ближайших поставщиков, что гарантирует их свежесть и качество.
@@ -90,7 +127,7 @@
         <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
           Мы внимательно следим за гастрономическими тенденциями, а самое главное – мы работаем с любовью и удовольствием.
         </p>
-        <a class="btn btn-white btn-lg btn-contur w-max" data-waved="light" href="" download>Скачать меню</a>
+        <a class="btn btn-white btn-lg btn-contur w-max" data-waved="light" href="" target="_blank">Посмотреть меню</a>
       </div>
     </div>
     <div class="grid grid-cols-2 xl:flex gap-2 md:gap-3 w-full">
@@ -144,45 +181,12 @@
   </div>
 </section>
 
-<!-- Банкетный зал -->
-
-<section class="container container-xs relative overflow-hidden" id="halls">
-  <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-left" data-anim="hidden">
-    <div class="pack pack-rect-lg bg-grey w-full max-w-[1050px] sm:h-full">
-      <%= loader %>
-      <%= picture({src: 'img/pictures/hall', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
-    </div>
-  </div>
-  <div class="relative bg-white sm:w-full sm:max-w-[550px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-20 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
-    <div class="border border-solid border-second py-8 sm:py-10 lg:py-16 xl:py-32 px-4 sm:px-7 lg:px-16">
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-10">Банкетный зал</h2>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-6 sm:mb-8">
-        Банкетный зал расположен в здании клубного дома, имеет отдельный вход. Это красивое и светлое помещение с витражными окнами и панорамным видом на бухту Геленджика.
-      </p>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
-        Идеальная площадка для проведения мероприятий любого формата.
-      </p>
-      <button class="btn btn-primary btn-lg btn-fill gap-1 w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">
-        Оставить заявку
-        <span class="hidden xs:inline-block">на мероприятие</span>
-      </button>
-    </div>
-  </div>
-</section>
-
 <!-- Ресторан -->
 
-<section class="container relative bg-primary text-white overflow-hidden">
-  <div class="absolute inset-0">
-    <div class="absolute -top-[480px] -left-56 animate-pulse">
-      <span class="text-second text-[100rem] opacity-10">
-        <%= icon({id: 'lines'}) %>
-      </span>
-    </div>
-  </div>
+<section class="container relative overflow-hidden">
   <div class="relative">
     <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-8 lg:mb-12 xl:mb-20">
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 duration-6 anim anim-right" data-anim="hidden">Ресторан с уличной <br> террасой</h2>
+      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 duration-6 anim anim-right" data-anim="hidden">Ресторан с террасой</h2>
       <p class="font-normal text-14 sm:text-16 leading-4 w-full lg:max-w-[400px] duration-6 anim anim-left" data-anim="hidden">
         Уютное светлое пространство с панорамным видом на гольф-поле и Геленджикскую бухту. Гости могут одновременно наслаждаться кулинарными шедеврами и живописными видами.
       </p>
@@ -202,7 +206,7 @@
 
 <!-- Погреб -->
 
-<section class="container container-xs overflow-hidden">
+<section class="container container-xs bg-primary text-white overflow-hidden">
   <div class="flex flex-col lg:flex-row lg:justify-between lg:gap-5 xl:gap-8">
     <div class="w-full lg:max-w-[800px] duration-6 anim anim-right" data-anim="hidden">
       <div class="pack pack-rect-lg sm:pack-rect-sm bg-grey sm:h-full">
@@ -211,13 +215,13 @@
       </div>
     </div>
     <div class="flex flex-col gap-5 relative lg:static xl:gap-8 w-full lg:max-w-[430px]">
-      <div class="bg-white pt-2 lg:pt-0 pr-2 lg:pr-0 -mt-12 sm:-mt-8 lg:-ml-16 mr-2 lg:mr-0">
-        <div class="border border-solid border-second py-6 sm:py-10 xl:py-20 pl-4 sm:pl-10 lg:pl-16 xl:pl-28 pr-4 sm:pr-10 lg:pr-16">
+      <div class="bg-primary pt-2 lg:pt-0 pr-2 lg:pr-0 -mt-12 sm:-mt-8 lg:-ml-16 mr-2 lg:mr-0">
+        <div class="border border-solid border-second border-opacity-20 py-6 sm:py-10 xl:py-20 pl-4 sm:pl-10 lg:pl-16 xl:pl-28 pr-4 sm:pr-10 lg:pr-16">
           <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-12">Винный <br class="hidden sm:block"> погреб</h2>
           <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
             Уютная камерная площадка, которая отлично подходит для небольших частных торжественных событий, а так же деловых встреч и конференций.
           </p>
-          <button class="btn btn-primary btn-lg btn-fill gap-1 w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">
+          <button class="btn btn-white btn-lg btn-contur gap-1 w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">
             Оставить заявку
             <span class="hidden xs:inline-block">на мероприятие</span>
           </button>
@@ -227,6 +231,32 @@
         <%= loader %>
         <%= picture({src: 'img/pictures/glasses', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Банкетный зал -->
+
+<section class="container container-xs relative overflow-hidden" id="halls">
+  <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-left" data-anim="hidden">
+    <div class="pack pack-rect-lg bg-grey w-full max-w-[1080px] sm:h-full">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/hall', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="relative bg-white sm:w-full sm:max-w-[475px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-20 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
+    <div class="border border-solid border-second py-8 sm:py-10 lg:py-16 xl:py-32 px-4 sm:px-7 lg:px-11">
+      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-10">Банкетный зал</h2>
+      <p class="font-normal text-14 sm:text-16 leading-4 mb-6 sm:mb-8">
+        Банкетный зал расположен в здании клубного дома, имеет отдельный вход. Это красивое и светлое помещение с витражными окнами и панорамным видом на бухту Геленджика.
+      </p>
+      <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
+        Идеальная площадка для проведения мероприятий любого формата.
+      </p>
+      <button class="btn btn-primary btn-lg btn-fill gap-1 w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">
+        Оставить заявку
+        <span class="hidden xs:inline-block">на мероприятие</span>
+      </button>
     </div>
   </div>
 </section>
@@ -268,7 +298,7 @@
   }
 ] %>
 
-<section class="container relative bg-primary text-white overflow-hidden">
+<!-- <section class="container relative bg-primary text-white overflow-hidden">
   <div class="absolute inset-0">
     <div class="absolute -top-96 -right-96 animate-pulse">
       <span class="text-second text-[100rem] opacity-10">
@@ -299,11 +329,11 @@
       <% } %>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- События -->
 
-<%= events({loader, icon, picture, theme: 'auto', title: 'События ресторана'}) %>
+<%= events({loader, icon, picture, theme: 'dark', title: 'События ресторана'}) %>
 
 <!-- Организация мероприятий -->
 
@@ -342,22 +372,15 @@
   }
 ] %>
 
-<section class="container container-xs relative bg-primary text-white overflow-hidden">
-  <div class="absolute inset-0">
-    <div class="absolute bottom-1/2 -left-1/3 animate-pulse">
-      <span class="text-second text-[100rem] opacity-20">
-        <%= icon({id: 'lines'}) %>
-      </span>
-    </div>
-  </div>
+<section class="container container-xs relative overflow-hidden">
   <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-right" data-anim="hidden">
-    <div class="pack pack-rect-lg bg-grey w-full max-w-[1030px] sm:h-full sm:ml-auto">
+    <div class="pack pack-rect-lg bg-grey w-full max-w-[1060px] sm:h-full sm:ml-auto">
       <%= loader %>
       <%= picture({src: 'img/pictures/organization', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
     </div>
   </div>
-  <div class="relative bg-primary-light sm:w-full sm:max-w-[550px] pt-2 pb-2 pl-2 sm:pr-2 mt-64 sm:mt-5 xl:mt-10 sm:mb-5 xl:mb-0 ml-2 sm:ml-0 duration-6 anim anim-left" data-anim="hidden">
-    <div class="border border-solid border-second border-opacity-20 py-6 sm:py-8 lg:py-12 px-4 sm:px-7">
+  <div class="relative bg-white sm:w-full sm:max-w-[550px] pt-2 pb-2 pl-2 sm:pr-2 mt-64 sm:mt-5 xl:mt-10 sm:mb-5 xl:mb-0 ml-2 sm:ml-0 duration-6 anim anim-left" data-anim="hidden">
+    <div class="border border-solid border-second py-6 sm:py-8 lg:py-12 px-4 sm:px-7">
       <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-3 md:mb-6">Организация мероприятий</h2>
       <h3 class="font-normal text-16 sm:text-20 lg:text-24 leading-3 mb-8 sm:mb-12">в клубном доме</h3>
       <p class="font-normal text-14 sm:text-16 leading-4 mb-6 sm:mb-10">
@@ -374,8 +397,8 @@
         <% }) %>
       </ul>
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
-        <a class="btn btn-black btn-lg btn-light flex-grow" data-waved="dark" href="" download>Скачать презентацию</a>
-        <button class="btn btn-white btn-lg btn-contur flex-grow" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Оставить заявку</button>
+        <a class="btn btn-primary btn-lg btn-fill flex-grow" data-waved="light" href="" download>Скачать презентацию</a>
+        <button class="btn btn-black btn-lg btn-contur flex-grow" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Оставить заявку</button>
       </div>
     </div>
   </div>
