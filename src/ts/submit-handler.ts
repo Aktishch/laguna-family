@@ -17,10 +17,10 @@ const submitHandler = (event: Event): void => {
 
     const formData: FormData = new FormData(form)
     const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement
-    const requestUrl = './ajax/submit-handler.php'
+    const requestUrl = '/local/templates/family_rest/ajax/submit-handler.php'
 
     submitBtn.setAttribute('disabled', 'disabled')
-    dialogNotClosing('./dialogs/dialog-preloader.php')
+    dialogNotClosing('/local/templates/family_rest/ajax/dialog-preloader.php')
 
     fetch(requestUrl, {
       method: 'POST',
@@ -34,12 +34,12 @@ const submitHandler = (event: Event): void => {
 
         switch (response.status) {
         case true: {
-          dialogOpen('./dialogs/dialog-success.php')
+          dialogOpen('/local/templates/family_rest/ajax/dialog-succeess.php')
           break
         }
 
         case false: {
-          dialogOpen('./dialogs/dialog-error.php')
+          dialogOpen('/local/templates/family_rest/ajax/dialog-error.php')
           break
         }
         }
