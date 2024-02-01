@@ -65,6 +65,10 @@ module.exports = {
           from: 'src/img/',
           to: 'img/',
         },
+        {
+          from: 'src/media/',
+          to: 'media/'
+        },
       ],
     }),
   ],
