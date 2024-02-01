@@ -1,6 +1,5 @@
 import AirDatepicker from 'air-datepicker'
 import localeRu from 'air-datepicker/locale/ru'
-import { touchDevice } from './functions/touch-device'
 
 declare global {
   interface Window {
@@ -21,10 +20,9 @@ export default (): void => {
 
     new window.AirDatepicker(calendar, {
       locale: localeRu,
-      isMobile: touchDevice(),
+      isMobile: true,
       autoClose: true,
       minDate: new Date(),
-      position: calendar.dataset.position ? String(calendar.dataset.position) : 'bottom left',
     })
   })
 }
