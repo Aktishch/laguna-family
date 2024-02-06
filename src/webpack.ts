@@ -1,6 +1,7 @@
 import fancybox from './ts/fancybox'
 import sliderSwiper from './ts/slider-swiper'
 import airDatepicker from './ts/air-datepicker'
+import accordion from './ts/accordion'
 import scrollHeader from './ts/scroll-header'
 import currentTab from './ts/current-tab'
 import currentYear from './ts/current-year'
@@ -21,6 +22,7 @@ window.addEventListener('DOMContentLoaded', ((): void => {
   fancybox()
   sliderSwiper()
   airDatepicker()
+  accordion()
   currentTab()
   currentYear()
   scrollHeader()

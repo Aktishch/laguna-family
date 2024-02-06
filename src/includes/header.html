@@ -31,7 +31,7 @@
   if (data.page === 'club') {
     header.logo = 'img/pictures/logo-club-house'
     header.logoDark = 'img/pictures/logo-club-house-dark'
-    header.size = 'w-20 sm:w-28'
+    header.size = 'w-24 sm:w-36'
     header.nav = [
       {
         id: '#restaurant',
@@ -122,20 +122,41 @@
 
   <% if (data.page === 'index') { %>
   <header class="container flex items-center justify-between gap-3 sm:gap-6 fixed z-3 top-0 left-0 right-0 bg-opacity-90 py-4 xl:py-8 duration-2" data-header>
-    <div class="flex flex-col md:flex-row items-start md:items-center gap-1 md:gap-0">
-      <a class="btn btn-white text-16 sm:text-20 md:text-24" data-waved="light" data-scroll href="#projects">Laguna Family</a>
-      <span class="font-normal text-white text-opacity-40 text-12 sm:text-14 md:text-16 leading-1 md:border-l md:border-solid md:border-white md:border-opacity-40 md:pl-4 md:ml-4">Семья ресторанов</span>
-    </div>
+    <a class="btn btn-white text-16 sm:text-20 md:text-24" data-waved="light" data-scroll href="#projects-1">Laguna Family</a>
     <div class="flex items-center sm:gap-8 lg:gap-14">
-      <a class="btn btn-white" data-scroll data-waved="light" href="#contacts">Контакты</a>
-      <a class="btn btn-white btn-lg btn-contur hidden sm:flex" data-waved="light" data-scroll href="#projects">Проекты</a>
+      <div class="relative" data-accordion="hidden" data-accordion-close="click">
+        <button class="btn btn-white" data-accordion-toggle data-waved="light">Контакты</button>
+        <div class="absolute top-7 right-0 w-64" data-accordion-content>
+          <div class="flex flex-col gap-5 bg-white p-4 sm:p-5">
+            <div class="flex flex-col items-start">
+              <span class="font-normal text-12 sm:text-14 leading-2 opacity-60 mb-1">Развлекательный <br> комплекс ЛАГУНА</span>
+              <a class="btn btn-black font-medium text-14 sm:text-16" data-waved="light" href="tel: +7 (966) 760-99-66">+7 (966) 760-99-66</a>
+            </div>
+            <div class="flex flex-col items-start">
+              <span class="font-normal text-12 sm:text-14 leading-2 opacity-60 mb-1">Ресторан CLUB HOUSE</span>
+              <a class="btn btn-black font-medium text-14 sm:text-16" data-waved="light" href="tel: +7 (966) 760-99-66">+7 (966) 760-99-66</a>
+            </div>
+            <div class="flex flex-col items-start">
+              <span class="font-normal text-12 sm:text-14 leading-2 opacity-60 mb-1">Организация мероприятий</span>
+              <a class="btn btn-black font-medium text-14 sm:text-16" data-waved="light" href="tel: +7 (966) 760-99-66">+7 (966) 760-99-66</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden sm:block relative" data-accordion="hidden" data-accordion-close="click">
+        <button class="btn btn-white btn-lg btn-contur" data-accordion-toggle data-waved="light">Проекты</button>
+        <div class="absolute top-14 right-0 w-64" data-accordion-content>
+          <div class="flex flex-col items-start gap-5 bg-white p-4 sm:p-5">
+            <a class="hover:underline underline-offset-4 font-normal text-16" data-scroll href="#projects-1">Развлекательный <br> комплекс ЛАГУНА</a>
+            <a class="hover:underline underline-offset-4 font-normal text-16" data-scroll href="#projects-2">Ресторан CLUB HOUSE</a>
+            <a class="hover:underline underline-offset-4 font-normal text-16" data-scroll href="#projects-3">Организация мероприятий</a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
   <% } else { %>
   <header class="container flex items-center justify-between gap-3 sm:gap-6 fixed z-3 top-0 left-0 right-0 bg-opacity-90 py-4 xl:py-8 duration-2" data-header>
-    <button class="btn btn-white xl:hidden text-36 sm:text-48" data-sidebar-open="mobile-menu" data-waved="light">
-      <%= icon({id: 'burger'}) %>
-    </button>
     <a class="btn btn-white <%= header.size %>" data-waved="light" href="/">
       <%= picture({src: header.logo, format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
     </a>
@@ -144,10 +165,16 @@
       <a class="btn btn-white" <%= header.scroll ? 'data-scroll' : '' %> data-waved="light" href="<%= item.id %>"><%= item.text %></a>
       <% }) %>
     </nav>
-    <a class="btn btn-white <%= header.btn ? 'hidden lg:flex' : '' %> font-bold text-14 sm:text-16 md:text-20" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
+    <div class="flex flex-col items-end sm:items-start gap-1 min-w-max">
+      <a class="btn btn-white font-bold text-14 sm:text-16 md:text-20 leading-1" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
+      <a class="btn btn-white font-normal text-12 sm:text-14 leading-1 border-b border-dashed border-white" data-waved="light" href="tel: <%= header.tel %>">Написать WhatsApp</a>
+    </div>
     <% if (header.btn) { %>
-    <a class="btn btn-white btn-sm sm:btn-lg btn-contur text-12 sm:text-14 min-w-max" data-waved="light" href="tel: +7 (966) 760-99-66">Задать вопрос</a>
+    <a class="hidden lg:flex btn btn-white btn-lg btn-contur text-14 min-w-max" data-waved="light" href="tel: +7 (966) 760-99-66">Задать вопрос</a>
     <% } %>
+    <button class="btn btn-white xl:hidden text-36 sm:text-48" data-sidebar-open="mobile-menu" data-waved="light">
+      <%= icon({id: 'burger'}) %>
+    </button>
   </header>
   <% } %>
 
@@ -157,13 +184,13 @@
   <div class="menu fixed inset-0 z-6 invisible opacity-0 duration-1" data-sidebar="close" data-sidebar-resize="xl" id="mobile-menu">
     <div class="menu__content flex flex-col bg-white invisible opacity-0 overflow-auto backdrop-blur-sm w-full max-w-[375px] h-full duration-3">
       <div class="flex items-center justify-between gap-8 p-4">
-        <button class="btn btn-black text-32 rounded-max" data-sidebar-close="mobile-menu" data-waved="light">
-          <%= icon({id: 'close'}) %>
-        </button>
         <a class="btn btn-black w-20" data-waved="light" href="/">
           <%= picture({src: header.logoDark, format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
         </a>
-        <a class="btn btn-black font-bold text-14 ml-auto" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
+        <a class="btn btn-black font-bold text-14" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
+        <button class="btn btn-black text-32 rounded-max" data-sidebar-close="mobile-menu" data-waved="light">
+          <%= icon({id: 'close'}) %>
+        </button>
       </div>
       <div class="flex flex-col items-start gap-8 py-10 px-4">
         <% _.forEach((header.nav), (item) => { %>
