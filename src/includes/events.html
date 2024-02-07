@@ -5,9 +5,9 @@
       <div class="swiper overflow-visible xxl:overflow-hidden">
         <div class="swiper-wrapper">
           <% for (var i = 0; i < 6; i++) { %>
-          <div class="swiper-slide pack pack-[170] bg-grey">
+          <div class="swiper-slide relative bg-grey">
             <%= loader %>
-            <%= picture({src: 'img/pictures/event', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+            <%= picture({src: 'img/pictures/event', format: '.jpg', webp: true, classes: 'block relative w-full', data: false, loading: 'lazy'}) %>
           </div>
           <% } %>
         </div>
