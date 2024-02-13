@@ -1,13 +1,13 @@
 <% var picture = _.template(require('../components/picture.html').default) %>
 
-<dialog class="dialog dialog-xl bg-white p-0">
+<dialog class="p-0 bg-white dialog dialog-xl">
   <div class="absolute inset-0">
     <div class="pack opacity-30 lg:opacity-100 w-full max-w-[910px] h-full ml-auto">
       <%= picture({src: 'img/pictures/scheme-bg', format: '.png', webp: true, classes: 'image', data: false, loading: 'auto'}) %>
     </div>
   </div>
   <div class="flex flex-col items-start justify-center relative min-h-[350px] lg:min-h-[500px] py-10 px-4 sm:px-10 lg:px-24">
-    <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-9 xl:mb-14">
+    <h2 class="mb-6 font-normal leading-3 text-32 sm:text-38 lg:text-46 md:mb-9 xl:mb-14">
       Схема <br> в разработке
     </h2>
     <button class="btn btn-primary btn-lg btn-fill" data-waved="light" data-fancybox-close>Вернуться на страницу</button>

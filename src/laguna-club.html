@@ -19,24 +19,24 @@
 <!-- Главный блок -->
 
 <main class="main container flex items-center justify-center relative bg-primary overflow-hidden min-h-screen sm:min-h-[700px] lg:min-h-[800px] xl:min-h-[960px] pt-36 lg:pt-52">
-  <div class="main__gradient absolute inset-0">
-    <div class="pack h-full duration-10 anim anim-decrease" data-anim="hidden">
+  <div class="absolute inset-0 main__gradient">
+    <div class="h-full pack duration-10 anim anim-decrease" data-anim="hidden">
       <%= loader %>
       <%= picture({src: 'img/pictures/club-bg-laguna', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
     </div>
   </div>
-  <div class="flex flex-col items-center justify-center relative z-1 text-center text-white">
+  <div class="relative flex flex-col items-center justify-center text-center text-white z-1">
     <%= picture({src: 'img/pictures/club-logo-laguna', format: '.png', webp: true, classes: 'block w-full max-w-[230px] lg:max-w-[420px] mb-16 lg:mb-20 xl:mb-44 ease-linear duration-4 anim anim-up', data: 'data-anim="hidden"', loading: 'auto'}) %>
-    <h1 class="font-normal text-32 sm:text-40 lg:text-subtitle leading-3 mb-10 sm:mb-8 ease-linear duration-4 delay-1 anim anim-up" data-anim="hidden">Ночной клуб LAGUNA</h1>
+    <h1 class="mb-10 font-normal leading-3 ease-linear text-32 sm:text-40 lg:text-subtitle sm:mb-8 duration-4 delay-1 anim anim-up" data-anim="hidden">Ночной клуб LAGUNA</h1>
     <div class="ease-linear duration-6 delay-3 anim anim-up" data-anim="hidden">
-      <button class="btn btn-white btn-lg btn-fill btn-glow text-black" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
+      <button class="text-black btn btn-white btn-lg btn-fill btn-glow" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
     </div>
   </div>
 </main>
 
 <!-- Ночной клуб -->
 
-<section class="container container-xs relative overflow-hidden" id="halls">
+<section class="container relative overflow-hidden container-xs" id="halls">
   <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-left" data-anim="hidden">
     <div class="pack pack-rect-lg bg-grey w-full max-w-[1000px] sm:h-full">
       <%= loader %>
@@ -44,18 +44,18 @@
     </div>
   </div>
   <div class="relative bg-white sm:w-full sm:max-w-[540px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-20 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
-    <div class="border border-solid border-second py-6 sm:py-10 xl:py-16 px-4 sm:px-8">
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-8 sm:mb-10">Ночной клуб</h2>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-5">
+    <div class="px-4 py-6 border border-solid border-second sm:py-10 xl:py-16 sm:px-8">
+      <h2 class="mb-8 font-normal leading-3 text-32 sm:text-38 lg:text-46 sm:mb-10">Ночной клуб</h2>
+      <p class="mb-5 font-normal leading-4 text-14 sm:text-16">
         Ночной клуб располагается на верхнем этаже развлекательного комплекса. С летней террасы открывается вид на всю бухту ночного города. Эта атмосферная локация идеальна как для ярких вечеринок, так и для проведения ваших знаковых мероприятий.
       </p>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-5">
+      <p class="mb-5 font-normal leading-4 text-14 sm:text-16">
         Лучшие артисты, большой контактный бар, разнообразная коктейльная карта и меню, сделают ваш вечер незабываемым.
       </p>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-10">
+      <p class="mb-8 font-normal leading-4 text-14 sm:text-16 sm:mb-10">
         В КЛУБЕ организованы приватные зоны с собственной террасой для комфортабельного отдыха.
       </p>
-      <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
         <a class="btn btn-primary btn-lg btn-fill" data-waved="dark" href="">Меню</a>
         <a class="btn btn-primary btn-lg btn-contur" data-waved="light" href="">Барная карта</a>
       </div>
@@ -105,16 +105,16 @@
 ] %>
 
 <section class="container container-xs">
-  <h2 class="font-normal text-center sm:text-left text-32 sm:text-38 lg:text-46 leading-3 mb-8 sm:mb-12 duration-6 anim anim-up" data-anim="hidden">Галерея событий</h2>
+  <h2 class="mb-8 font-normal leading-3 text-center sm:text-left text-32 sm:text-38 lg:text-46 sm:mb-12 duration-6 anim anim-up" data-anim="hidden">Галерея событий</h2>
   <div class="grid grid-cols-2 xl:grid-cols-3 grid-flow-dense auto-rows-[50px] sm:auto-rows-[180px] md:auto-rows-[250px] gap-2 sm:gap-4">
     <% for (var i = 0; i < gallery.length; i++) { %>
     <div class="<%= gallery[i].col %> <%= gallery[i].row %> duration-6 anim anim-up" data-anim="hidden">
-      <a class="pack bg-grey h-full" data-movement="light" data-fancybox="gallery" href="img/pictures/beach.jpg">
+      <a class="h-full pack bg-grey" data-movement="light" data-fancybox="gallery" href="img/pictures/beach.jpg">
         <%= loader %>
         <%= picture({src: 'img/pictures/beach', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
         <% if (i === 3) { %>
-        <div class="flex items-center justify-center absolute inset-0 bg-black bg-opacity-40 pointer-events-none">
-          <button class="btn btn-second bg-white text-50 md:text-404 rounded-max" data-waved="light">
+        <div class="absolute inset-0 flex items-center justify-center bg-black pointer-events-none bg-opacity-40">
+          <button class="bg-white btn btn-second text-50 md:text-404 rounded-max" data-waved="light">
             <span class="-m-2 md:-m-5">
               <%= icon({id: 'play'}) %>
             </span>

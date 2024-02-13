@@ -1,21 +1,21 @@
 <section class="events <%= theme === 'dark' ? 'events--dark bg-primary text-white' : '' %> container container-xs relative overflow-hidden" id="events">
   <div class="relative">
-    <h2 class="font-normal text-center sm:text-left text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-12 duration-6 anim anim-up" data-anim="hidden"><%= title %></h2>
-    <div class="events-slider relative">
-      <div class="swiper overflow-visible xxl:overflow-hidden">
+    <h2 class="mb-6 font-normal leading-3 text-center sm:text-left text-32 sm:text-38 lg:text-46 md:mb-12 duration-6 anim anim-up" data-anim="hidden"><%= title %></h2>
+    <div class="relative events-slider">
+      <div class="overflow-visible swiper xxl:overflow-hidden">
         <div class="swiper-wrapper">
           <% for (var i = 0; i < 6; i++) { %>
-          <div class="swiper-slide relative bg-grey">
+          <div class="relative swiper-slide bg-grey">
             <%= loader %>
             <%= picture({src: 'img/pictures/event', format: '.jpg', webp: true, classes: 'block relative w-full', data: false, loading: 'lazy'}) %>
           </div>
           <% } %>
         </div>
       </div>
-      <button class="events-slider-button swiper-button-prev btn btn-black btn-light absolute left-0 md:-left-4 xl:-left-10 text-28 md:text-36 rounded-max w-14 md:w-20 h-14 md:h-20" data-waved="dark">
+      <button class="absolute left-0 events-slider-button swiper-button-prev btn btn-black btn-light md:-left-4 xl:-left-10 text-28 md:text-36 rounded-max w-14 md:w-20 h-14 md:h-20" data-waved="dark">
         <%= icon({id: 'arrow-left'}) %>
       </button>
-      <button class="events-slider-button swiper-button-next btn btn-black btn-light absolute right-0 md:-right-4 xl:-right-10 text-28 md:text-36 rounded-max w-14 md:w-20 h-14 md:h-20" data-waved="dark">
+      <button class="absolute right-0 events-slider-button swiper-button-next btn btn-black btn-light md:-right-4 xl:-right-10 text-28 md:text-36 rounded-max w-14 md:w-20 h-14 md:h-20" data-waved="dark">
         <%= icon({id: 'arrow-right'}) %>
       </button>
     </div>

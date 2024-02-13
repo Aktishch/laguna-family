@@ -20,18 +20,18 @@
 <!-- Главный блок -->
 
 <main class="main container flex items-center justify-center relative bg-primary overflow-hidden min-h-screen sm:min-h-[700px] lg:min-h-[800px] xl:min-h-[960px] pt-36 lg:pt-52">
-  <div class="main__gradient absolute inset-0">
-    <div class="pack h-full duration-10 anim anim-decrease" data-anim="hidden">
+  <div class="absolute inset-0 main__gradient">
+    <div class="h-full pack duration-10 anim anim-decrease" data-anim="hidden">
       <%= loader %>
       <%= picture({src: 'img/pictures/main-bg-club-house', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
     </div>
   </div>
-  <div class="flex flex-col items-center justify-center relative z-1 text-center text-white">
+  <div class="relative flex flex-col items-center justify-center text-center text-white z-1">
     <%= picture({src: 'img/pictures/logo-club-house', format: '.png', webp: true, classes: 'block w-full max-w-[300px] lg:max-w-[600px] mb-16 lg:mb-20 xl:mb-44 ease-linear duration-4 anim anim-up', data: 'data-anim="hidden"', loading: 'auto'}) %>
-    <!-- <h1 class="font-normal text-32 sm:text-40 lg:text-subtitle leading-3 mb-3 sm:mb-2 ease-linear duration-4 delay-1 anim anim-up" data-anim="hidden">Ресторан <br class="md:hidden"> с террасой</h1>
-    <h3 class="font-normal text-20 lg:text-24 leading-3 mb-10 ease-linear duration-6 delay-2 anim anim-up" data-anim="hidden">в Геленджик Гольф Резорт</h3> -->
+    <!-- <h1 class="mb-3 font-normal leading-3 ease-linear text-32 sm:text-40 lg:text-subtitle sm:mb-2 duration-4 delay-1 anim anim-up" data-anim="hidden">Ресторан <br class="md:hidden"> с террасой</h1>
+    <h3 class="mb-10 font-normal leading-3 ease-linear text-20 lg:text-24 duration-6 delay-2 anim anim-up" data-anim="hidden">в Геленджик Гольф Резорт</h3> -->
     <div class="ease-linear duration-6 delay-3 anim anim-up" data-anim="hidden">
-      <button class="btn btn-white btn-lg btn-fill btn-glow text-black" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
+      <button class="text-black btn btn-white btn-lg btn-fill btn-glow" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
     </div>
   </div>
 </main>
@@ -73,7 +73,7 @@
   }
 ] %>
 
-<section class="container container-xs relative overflow-hidden" id="restaurant">
+<section class="container relative overflow-hidden container-xs" id="restaurant">
   <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-right" data-anim="hidden">
     <div class="pack pack-rect-lg bg-grey w-full max-w-[1060px] sm:h-full sm:ml-auto">
       <%= loader %>
@@ -81,19 +81,19 @@
     </div>
   </div>
   <div class="relative bg-white sm:w-full sm:max-w-[475px] pt-2 sm:pb-2 pl-2 sm:pr-2 mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-0 ml-2 sm:ml-0 duration-6 anim anim-left" data-anim="hidden">
-    <div class="border border-solid border-second py-8 sm:py-10 lg:py-12 px-4 sm:px-7 lg:px-11">
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-10">Ресторан <br> Club House – это</h2>
+    <div class="px-4 py-8 border border-solid border-second sm:py-10 lg:py-12 sm:px-7 lg:px-11">
+      <h2 class="mb-6 font-normal leading-3 text-32 sm:text-38 lg:text-46 md:mb-10">Ресторан <br> Club House – это</h2>
       <ul class="flex flex-col gap-4 mb-8 sm:mb-12">
         <% _.forEach((club), (item) => { %>
         <li class="flex items-center">
-          <span class="text-24 mr-3">
+          <span class="mr-3 text-24">
             <%= icon({id: item.icon}) %>
           </span>
-          <p class="font-normal text-14 sm:text-16 leading-3"><%= item.text %></p>
+          <p class="font-normal leading-3 text-14 sm:text-16"><%= item.text %></p>
         </li>
         <% }) %>
       </ul>
-      <a class="btn btn-black btn-lg btn-contur gap-1 sm:w-max" data-waved="dark" data-fancybox href="https://www.youtube.com/watch?v=af59U2BRRAU">
+      <a class="gap-1 btn btn-black btn-lg btn-contur sm:w-max" data-waved="dark" data-fancybox href="https://www.youtube.com/watch?v=af59U2BRRAU">
         <span class="text-second text-24">
           <%= icon({id: 'play'}) %>
         </span>
@@ -106,7 +106,7 @@
 
 <!-- Концепция -->
 
-<section class="concept container relative bg-primary text-white overflow-hidden" id="menu">
+<section class="container relative overflow-hidden text-white concept bg-primary" id="menu">
   <div class="absolute inset-0">
     <div class="absolute -top-[480px] -left-96 animate-pulse">
       <span class="text-second text-[100rem] opacity-20">
@@ -114,23 +114,23 @@
       </span>
     </div>
   </div>
-  <div class="flex flex-col xl:flex-row xl:justify-between gap-4 xl:gap-0 relative">
+  <div class="relative flex flex-col gap-4 xl:flex-row xl:justify-between xl:gap-0">
     <div class="bg-primary-light relative z-1 w-full xl:max-w-[475px] p-2 xl:mt-5 xl:-mr-10 duration-6 anim anim-up" data-anim="hidden">
-      <div class="border border-solid border-second border-opacity-20 py-4 sm:py-7 lg:py-10 px-4 sm:px-7">
-        <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-12">Гастрономическая концепция</h2>
-        <p class="font-normal text-14 sm:text-16 leading-4 mb-6 sm:mb-8">
+      <div class="px-4 py-4 border border-solid border-second border-opacity-20 sm:py-7 lg:py-10 sm:px-7">
+        <h2 class="mb-6 font-normal leading-3 text-32 sm:text-38 lg:text-46 md:mb-12">Гастрономическая концепция</h2>
+        <p class="mb-6 font-normal leading-4 text-14 sm:text-16 sm:mb-8">
           Создавая меню ресторана, команда исследовала рецептуру русской кухни, а в выборе продуктов отдала предпочтение локальным и фермерским продуктам Черноморского побережья. Мы работаем с сезонными продуктами от ближайших поставщиков, что гарантирует их свежесть и качество.
         </p>
-        <p class="font-normal text-14 sm:text-16 leading-4 mb-6 sm:mb-8">
+        <p class="mb-6 font-normal leading-4 text-14 sm:text-16 sm:mb-8">
           Отдельная благодарность шеф-повару ресторана Аделю Хаматову за кулинарные шедевры и изысканное гастрономическое удовольствие, которое получают наши гости.
         </p>
-        <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
+        <p class="mb-8 font-normal leading-4 text-14 sm:text-16 sm:mb-12">
           Мы внимательно следим за гастрономическими тенденциями, а самое главное – мы работаем с любовью и удовольствием.
         </p>
         <a class="btn btn-white btn-lg btn-contur w-max" data-waved="light" href="" target="_blank">Посмотреть меню</a>
       </div>
     </div>
-    <div class="grid grid-cols-2 xl:flex gap-2 md:gap-3 w-full">
+    <div class="grid w-full grid-cols-2 gap-2 xl:flex md:gap-3">
       <div class="pack bg-grey w-full xl:max-w-[450px] h-full">
         <%= loader %>
         <%= picture({src: 'img/pictures/cook', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
@@ -152,29 +152,29 @@
         </div>
         <div class="flex flex-col px-3 mt-auto duration-6 anim anim-down" data-anim="hidden">
           <h3 class="font-bold text-16 md:text-20 leading-2">Адель Хаматов</h3>
-          <h4 class="md:hidden font-normal text-12 leading-2 opacity-40 mt-1">Шеф-повар ресторана</h4>
-          <div class="hidden md:block mt-6">
-            <p class="font-normal text-12 leading-3 opacity-80 mb-5">
+          <h4 class="mt-1 font-normal md:hidden text-12 leading-2 opacity-40">Шеф-повар ресторана</h4>
+          <div class="hidden mt-6 md:block">
+            <p class="mb-5 font-normal leading-3 text-12 opacity-80">
               2014 ресторан «White Rabbit», Москва, работал у шефа Владимира Мухина. Ресторан с 1 звездой Мишлен
             </p>
-            <p class="font-normal text-12 leading-3 opacity-80 mb-5">
+            <p class="mb-5 font-normal leading-3 text-12 opacity-80">
               2016 Ресторан «Twins», Москва, братья Биризутские. Ресторан с 2 звездами Мишлен
             </p>
-            <p class="font-normal text-12 leading-3 opacity-80">
+            <p class="font-normal leading-3 text-12 opacity-80">
               2018 Ресторан «Северяне», Москва, работал с шефом Георгием Трояном. Ресторан получил рекомендацию от Мишлен на получение звезды
             </p>
           </div>
         </div>
       </div>
     </div>
-    <div class="md:hidden mt-6 duration-6 anim anim-down" data-anim="hidden">
-      <p class="font-normal text-12 leading-3 opacity-80 mb-3">
+    <div class="mt-6 md:hidden duration-6 anim anim-down" data-anim="hidden">
+      <p class="mb-3 font-normal leading-3 text-12 opacity-80">
         2014 ресторан «White Rabbit», Москва, работал у шефа Владимира Мухина. Ресторан с 1 звездой Мишлен
       </p>
-      <p class="font-normal text-12 leading-3 opacity-80 mb-3">
+      <p class="mb-3 font-normal leading-3 text-12 opacity-80">
         2016 Ресторан «Twins», Москва, братья Биризутские. Ресторан с 2 звездами Мишлен
       </p>
-      <p class="font-normal text-12 leading-3 opacity-80">
+      <p class="font-normal leading-3 text-12 opacity-80">
         2018 Ресторан «Северяне», Москва, работал с шефом Георгием Трояном. Ресторан получил рекомендацию от Мишлен на получение звезды
       </p>
     </div>
@@ -185,8 +185,8 @@
 
 <section class="container relative overflow-hidden">
   <div class="relative">
-    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 mb-8 lg:mb-12 xl:mb-20">
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 duration-6 anim anim-right" data-anim="hidden">Ресторан с террасой</h2>
+    <div class="flex flex-col gap-8 mb-8 lg:flex-row lg:items-center lg:justify-between lg:mb-12 xl:mb-20">
+      <h2 class="font-normal leading-3 text-32 sm:text-38 lg:text-46 duration-6 anim anim-right" data-anim="hidden">Ресторан с террасой</h2>
       <p class="font-normal text-14 sm:text-16 leading-4 w-full lg:max-w-[400px] duration-6 anim anim-left" data-anim="hidden">
         Уютное светлое пространство с панорамным видом на гольф-поле и Геленджикскую бухту. Гости могут одновременно наслаждаться кулинарными шедеврами и живописными видами.
       </p>
@@ -194,7 +194,7 @@
     <div class="grid grid-cols-2 lg:grid-cols-3 grid-flow-dense auto-rows-[110px] sm:auto-rows-[180px] lg:auto-rows-[250px] gap-2 sm:gap-5 lg:gap-8">
       <% for (var i = 0; i < 5; i++) { %>
       <div class="<%= i === 1 ? 'row-2' : '' %> duration-6 anim anim-up" data-anim="hidden">
-        <a class="pack bg-grey h-full" data-movement="light" data-fancybox="restaurant" href="img/pictures/hall.jpg">
+        <a class="h-full pack bg-grey" data-movement="light" data-fancybox="restaurant" href="img/pictures/hall.jpg">
           <%= loader %>
           <%= picture({src: 'img/pictures/hall', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
         </a>
@@ -206,7 +206,7 @@
 
 <!-- Погреб -->
 
-<section class="container container-xs bg-primary text-white overflow-hidden">
+<section class="container overflow-hidden text-white container-xs bg-primary">
   <div class="flex flex-col lg:flex-row lg:justify-between lg:gap-5 xl:gap-8">
     <div class="w-full lg:max-w-[800px] duration-6 anim anim-right" data-anim="hidden">
       <div class="pack pack-rect-lg sm:pack-rect-sm bg-grey sm:h-full">
@@ -215,13 +215,13 @@
       </div>
     </div>
     <div class="flex flex-col gap-5 relative lg:static xl:gap-8 w-full lg:max-w-[430px]">
-      <div class="bg-primary pt-2 lg:pt-0 pr-2 lg:pr-0 -mt-12 sm:-mt-8 lg:-ml-16 mr-2 lg:mr-0">
-        <div class="border border-solid border-second border-opacity-20 py-6 sm:py-10 xl:py-20 pl-4 sm:pl-10 lg:pl-16 xl:pl-28 pr-4 sm:pr-10 lg:pr-16">
-          <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-12">Винный <br class="hidden sm:block"> погреб</h2>
-          <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
+      <div class="pt-2 pr-2 mr-2 -mt-12 bg-primary lg:pt-0 lg:pr-0 sm:-mt-8 lg:-ml-16 lg:mr-0">
+        <div class="py-6 pl-4 pr-4 border border-solid border-second border-opacity-20 sm:py-10 xl:py-20 sm:pl-10 lg:pl-16 xl:pl-28 sm:pr-10 lg:pr-16">
+          <h2 class="mb-6 font-normal leading-3 text-32 sm:text-38 lg:text-46 md:mb-12">Винный <br class="hidden sm:block"> погреб</h2>
+          <p class="mb-8 font-normal leading-4 text-14 sm:text-16 sm:mb-12">
             Уютная камерная площадка, которая отлично подходит для небольших частных торжественных событий, а так же деловых встреч и конференций.
           </p>
-          <button class="btn btn-white btn-lg btn-contur gap-1 w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">
+          <button class="w-full gap-1 btn btn-white btn-lg btn-contur sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">
             Оставить заявку
             <span class="hidden xs:inline-block">на мероприятие</span>
           </button>
@@ -237,7 +237,7 @@
 
 <!-- Банкетный зал -->
 
-<section class="container container-xs relative overflow-hidden" id="halls">
+<section class="container relative overflow-hidden container-xs" id="halls">
   <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-left" data-anim="hidden">
     <div class="pack pack-rect-lg bg-grey w-full max-w-[1080px] sm:h-full">
       <%= loader %>
@@ -245,15 +245,15 @@
     </div>
   </div>
   <div class="relative bg-white sm:w-full sm:max-w-[475px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-20 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
-    <div class="border border-solid border-second py-8 sm:py-10 lg:py-16 xl:py-32 px-4 sm:px-7 lg:px-11">
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-10">Банкетный зал</h2>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-6 sm:mb-8">
+    <div class="px-4 py-8 border border-solid border-second sm:py-10 lg:py-16 xl:py-32 sm:px-7 lg:px-11">
+      <h2 class="mb-6 font-normal leading-3 text-32 sm:text-38 lg:text-46 md:mb-10">Банкетный зал</h2>
+      <p class="mb-6 font-normal leading-4 text-14 sm:text-16 sm:mb-8">
         Банкетный зал расположен в здании клубного дома, имеет отдельный вход. Это красивое и светлое помещение с витражными окнами и панорамным видом на бухту Геленджика.
       </p>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
+      <p class="mb-8 font-normal leading-4 text-14 sm:text-16 sm:mb-12">
         Идеальная площадка для проведения мероприятий любого формата.
       </p>
-      <button class="btn btn-primary btn-lg btn-fill gap-1 w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">
+      <button class="w-full gap-1 btn btn-primary btn-lg btn-fill sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">
         Оставить заявку
         <span class="hidden xs:inline-block">на мероприятие</span>
       </button>
@@ -298,7 +298,7 @@
   }
 ] %>
 
-<!-- <section class="container relative bg-primary text-white overflow-hidden">
+<!-- <section class="container relative overflow-hidden text-white bg-primary">
   <div class="absolute inset-0">
     <div class="absolute -top-96 -right-96 animate-pulse">
       <span class="text-second text-[100rem] opacity-10">
@@ -307,21 +307,21 @@
     </div>
   </div>
   <div class="relative">
-    <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-12 duration-6 anim anim-up" data-anim="hidden">Ресторан <br class="sm:hidden"> Club House – это</h2>
+    <h2 class="mb-6 font-normal leading-3 text-32 sm:text-38 lg:text-46 md:mb-12 duration-6 anim anim-up" data-anim="hidden">Ресторан <br class="sm:hidden"> Club House – это</h2>
     <ul class="grid grid-cols-1 lg:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-16 w-full xl:max-w-[960px] mb-10 lg:mb-16">
       <% _.forEach((restaurant), (item) => { %>
       <li class="flex items-center duration-6 anim anim-up" data-anim="hidden">
-        <span class="text-24 mr-3">
+        <span class="mr-3 text-24">
           <%= icon({id: item.icon}) %>
         </span>
-        <p class="font-normal text-14 sm:text-16 leading-3"><%= item.text %></p>
+        <p class="font-normal leading-3 text-14 sm:text-16"><%= item.text %></p>
       </li>
       <% }) %>
     </ul>
     <div class="grid grid-cols-2 lg:grid-cols-3 grid-flow-dense auto-rows-[110px] sm:auto-rows-[180px] lg:auto-rows-[250px] gap-2 sm:gap-5 lg:gap-8">
       <% for (var i = 0; i < 5; i++) { %>
       <div class="<%= i === 1 ? 'row-2' : '' %> duration-6 anim anim-up" data-anim="hidden">
-        <a class="pack bg-grey h-full" data-movement="light" data-fancybox="club" href="img/pictures/hall.jpg">
+        <a class="h-full pack bg-grey" data-movement="light" data-fancybox="club" href="img/pictures/hall.jpg">
           <%= loader %>
           <%= picture({src: 'img/pictures/hall', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
         </a>
@@ -372,7 +372,7 @@
   }
 ] %>
 
-<section class="container container-xs relative overflow-hidden">
+<section class="container relative overflow-hidden container-xs">
   <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-right" data-anim="hidden">
     <div class="pack pack-rect-lg bg-grey w-full max-w-[1060px] sm:h-full sm:ml-auto">
       <%= loader %>
@@ -380,25 +380,25 @@
     </div>
   </div>
   <div class="relative bg-white sm:w-full sm:max-w-[550px] pt-2 pb-2 pl-2 sm:pr-2 mt-64 sm:mt-5 xl:mt-10 sm:mb-5 xl:mb-0 ml-2 sm:ml-0 duration-6 anim anim-left" data-anim="hidden">
-    <div class="border border-solid border-second py-6 sm:py-8 lg:py-12 px-4 sm:px-7">
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-3 md:mb-6">Организация мероприятий</h2>
-      <h3 class="font-normal text-16 sm:text-20 lg:text-24 leading-3 mb-8 sm:mb-12">в клубном доме</h3>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-6 sm:mb-10">
+    <div class="px-4 py-6 border border-solid border-second sm:py-8 lg:py-12 sm:px-7">
+      <h2 class="mb-3 font-normal leading-3 text-32 sm:text-38 lg:text-46 md:mb-6">Организация мероприятий</h2>
+      <h3 class="mb-8 font-normal leading-3 text-16 sm:text-20 lg:text-24 sm:mb-12">в клубном доме</h3>
+      <p class="mb-6 font-normal leading-4 text-14 sm:text-16 sm:mb-10">
         Пространство развлекательного комплекса позволяет проводить на своей территории мероприятия любого формата и масштаба
       </p>
       <ul class="grid grid-cols-2 gap-3 mb-6 sm:mb-10 xl:mb-16">
         <% _.forEach((organization), (item) => { %>
         <li class="flex items-center">
-          <span class="text-24 mr-3">
+          <span class="mr-3 text-24">
             <%= icon({id: item.icon}) %>
           </span>
-          <p class="font-normal text-14 sm:text-16 leading-3"><%= item.text %></p>
+          <p class="font-normal leading-3 text-14 sm:text-16"><%= item.text %></p>
         </li>
         <% }) %>
       </ul>
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
-        <a class="btn btn-primary btn-lg btn-fill flex-grow" data-waved="light" href="" download>Скачать презентацию</a>
-        <button class="btn btn-black btn-lg btn-contur flex-grow" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Оставить заявку</button>
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+        <a class="flex-grow btn btn-primary btn-lg btn-fill" data-waved="light" href="" download>Скачать презентацию</a>
+        <button class="flex-grow btn btn-black btn-lg btn-contur" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Оставить заявку</button>
       </div>
     </div>
   </div>

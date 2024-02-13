@@ -19,24 +19,24 @@
 <!-- Главный блок -->
 
 <main class="main container flex items-center justify-center relative bg-primary overflow-hidden min-h-screen sm:min-h-[700px] lg:min-h-[800px] xl:min-h-[960px] pt-36 lg:pt-52">
-  <div class="main__gradient absolute inset-0">
-    <div class="pack h-full duration-10 anim anim-decrease" data-anim="hidden">
+  <div class="absolute inset-0 main__gradient">
+    <div class="h-full pack duration-10 anim anim-decrease" data-anim="hidden">
       <%= loader %>
       <%= picture({src: 'img/pictures/restaurant-bg-laguna', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
     </div>
   </div>
-  <div class="flex flex-col items-center justify-center relative z-1 text-center text-white">
+  <div class="relative flex flex-col items-center justify-center text-center text-white z-1">
     <%= picture({src: 'img/pictures/restaurant-logo-laguna', format: '.png', webp: true, classes: 'block w-full max-w-[230px] lg:max-w-[420px] mb-16 lg:mb-20 xl:mb-44 ease-linear duration-4 anim anim-up', data: 'data-anim="hidden"', loading: 'auto'}) %>
-    <h1 class="font-normal text-32 sm:text-40 lg:text-subtitle leading-3 mb-10 sm:mb-8 ease-linear duration-4 delay-1 anim anim-up" data-anim="hidden">Семейный ресторан</h1>
+    <h1 class="mb-10 font-normal leading-3 ease-linear text-32 sm:text-40 lg:text-subtitle sm:mb-8 duration-4 delay-1 anim anim-up" data-anim="hidden">Семейный ресторан</h1>
     <div class="ease-linear duration-6 delay-3 anim anim-up" data-anim="hidden">
-      <button class="btn btn-white btn-lg btn-fill btn-glow text-black" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
+      <button class="text-black btn btn-white btn-lg btn-fill btn-glow" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
     </div>
   </div>
 </main>
 
 <!-- Ресторан -->
 
-<section class="container container-xs relative overflow-hidden" id="halls">
+<section class="container relative overflow-hidden container-xs" id="halls">
   <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-left" data-anim="hidden">
     <div class="pack pack-rect-lg bg-grey w-full max-w-[1060px] sm:h-full">
       <%= loader %>
@@ -44,19 +44,19 @@
     </div>
   </div>
   <div class="relative bg-white sm:w-full sm:max-w-[475px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-20 sm:mb-5 xl:mb-20 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
-    <div class="border border-solid border-second py-8 sm:py-10 lg:py-16 xl:py-32 px-4 sm:px-7 lg:px-11">
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 md:mb-10">О ресторане</h2>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12">
+    <div class="px-4 py-8 border border-solid border-second sm:py-10 lg:py-16 xl:py-32 sm:px-7 lg:px-11">
+      <h2 class="mb-6 font-normal leading-3 text-32 sm:text-38 lg:text-46 md:mb-10">О ресторане</h2>
+      <p class="mb-8 font-normal leading-4 text-14 sm:text-16 sm:mb-12">
         Ресторан европейской кухни с панорамным видом как на бухту Геленджика, так и на шикарную морскую набережную города расположился на первом этаже Лагуны
       </p>
-      <button class="btn btn-primary btn-lg btn-fill gap-1 w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
+      <button class="w-full gap-1 btn btn-primary btn-lg btn-fill sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать столик</button>
     </div>
   </div>
 </section>
 
 <!-- Концепция -->
 
-<section class="concept container container-xs relative bg-primary text-white overflow-hidden">
+<section class="container relative overflow-hidden text-white concept container-xs bg-primary">
   <div class="absolute inset-0">
     <div class="absolute -top-[550px] -left-96 animate-pulse">
       <span class="text-second text-[100rem] opacity-20">
@@ -64,24 +64,24 @@
       </span>
     </div>
   </div>
-  <div class="container container-xs absolute inset-0 duration-6 anim anim-right" data-anim="hidden">
+  <div class="container absolute inset-0 container-xs duration-6 anim anim-right" data-anim="hidden">
     <div class="pack pack-rect-lg bg-grey w-full lg:max-w-[600px] xl:max-w-[850px] lg:h-full lg:ml-auto">
       <%= loader %>
       <%= picture({src: 'img/pictures/chef', format: '.jpg', webp: true, classes: 'image image-top-right lg:image-center', data: false, loading: 'lazy'}) %>
     </div>
   </div>
   <div class="relative bg-primary-light sm:w-full sm:max-w-[480px] pt-2 pb-2 pl-2 sm:pr-2 mt-64 lg:mt-5 xl:mt-9 lg:mb-5 xl:mb-9 ml-2 sm:ml-0 duration-6 anim anim-left" data-anim="hidden">
-    <div class="border border-solid border-second border-opacity-20 py-7 sm:py-8 lg:py-14 px-4 sm:px-7">
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-8 sm:mb-12">Гастрономическая концепция</h2>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-8">
+    <div class="px-4 border border-solid border-second border-opacity-20 py-7 sm:py-8 lg:py-14 sm:px-7">
+      <h2 class="mb-8 font-normal leading-3 text-32 sm:text-38 lg:text-46 sm:mb-12">Гастрономическая концепция</h2>
+      <p class="mb-8 font-normal leading-4 text-14 sm:text-16">
         Шеф повар Хачатур Антонян не только вносит свое авторское видение в традиционные блюда и постоянно находится в поиске лучшего решения в кулинарии, но и сам тщательно отбираем местных поставщиков, благодаря чему на вашем столе всегда свежие продукты высокого качества.
       </p>
-      <p class="font-normal text-14 sm:text-16 leading-4 mb-7 sm:mb-12">
+      <p class="font-normal leading-4 text-14 sm:text-16 mb-7 sm:mb-12">
         Меню ресторана всегда обновляется в зависимости от сезона и наличия качественных продуктов в регионе, но есть и «хиты», рецептуру которых мы не меняем годами и радуем ими наших новых и постоянных гостей.
       </p>
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <a class="btn btn-black btn-lg btn-light flex-grow" data-waved="dark" href="" download>Скачать меню</a>
-        <a class="btn btn-white btn-lg btn-contur flex-grow" data-waved="light" href="">Винная и барная карта</a>
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <a class="flex-grow btn btn-black btn-lg btn-light" data-waved="dark" href="" download>Скачать меню</a>
+        <a class="flex-grow btn btn-white btn-lg btn-contur" data-waved="light" href="">Винная и барная карта</a>
       </div>
     </div>
   </div>
@@ -125,22 +125,22 @@
 ] %>
 
 <section class="container container-xs">
-  <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-6 duration-6 anim anim-up" data-anim="hidden">Для маленьких гостей</h2>
-  <p class="font-normal text-14 sm:text-16 leading-4 mb-8 sm:mb-12 duration-6 anim anim-up" data-anim="hidden">
+  <h2 class="mb-6 font-normal leading-3 text-32 sm:text-38 lg:text-46 duration-6 anim anim-up" data-anim="hidden">Для маленьких гостей</h2>
+  <p class="mb-8 font-normal leading-4 text-14 sm:text-16 sm:mb-12 duration-6 anim anim-up" data-anim="hidden">
     Специальное детское меню, не оставит наших маленьких гостей равнодушными и голодными, а уютная детская комната позволит родителям и детям чувствовать себя комфортно и отдыхать в свое удовольствие! Каждые выходные в ресторане проводиться детская анимационная программа, а так же кулинарные Мастер-классы от шеф-повара ресторана Хачатура Антоняна.
   </p>
   <div class="mb-10 sm:mb-16 duration-6 anim anim-up" data-anim="hidden">
-    <a class="btn btn-primary btn-lg btn-fill w-full sm:w-max" data-waved="light" href="">Детское меню</a>
+    <a class="w-full btn btn-primary btn-lg btn-fill sm:w-max" data-waved="light" href="">Детское меню</a>
   </div>
   <div class="grid grid-cols-2 xl:grid-cols-3 grid-flow-dense auto-rows-[50px] sm:auto-rows-[180px] md:auto-rows-[250px] gap-2 sm:gap-4">
     <% for (var i = 0; i < children.length; i++) { %>
     <div class="<%= children[i].col %> <%= children[i].row %> duration-6 anim anim-up" data-anim="hidden">
-      <a class="pack bg-grey h-full" data-movement="light" data-fancybox="children" href="img/pictures/restaurant.jpg">
+      <a class="h-full pack bg-grey" data-movement="light" data-fancybox="children" href="img/pictures/restaurant.jpg">
         <%= loader %>
         <%= picture({src: 'img/pictures/restaurant', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
         <% if (i === 3) { %>
-        <div class="flex items-center justify-center absolute inset-0 bg-black bg-opacity-40 pointer-events-none">
-          <button class="btn btn-second bg-white text-50 md:text-404 rounded-max" data-waved="light">
+        <div class="absolute inset-0 flex items-center justify-center bg-black pointer-events-none bg-opacity-40">
+          <button class="bg-white btn btn-second text-50 md:text-404 rounded-max" data-waved="light">
             <span class="-m-2 md:-m-5">
               <%= icon({id: 'play'}) %>
             </span>
@@ -208,16 +208,16 @@
 ] %>
 
 <section class="container container-xs">
-  <h2 class="font-normal text-center sm:text-left text-32 sm:text-38 lg:text-46 leading-3 mb-8 sm:mb-12 duration-6 anim anim-up" data-anim="hidden">Галерея событий</h2>
+  <h2 class="mb-8 font-normal leading-3 text-center sm:text-left text-32 sm:text-38 lg:text-46 sm:mb-12 duration-6 anim anim-up" data-anim="hidden">Галерея событий</h2>
   <div class="grid grid-cols-2 xl:grid-cols-3 grid-flow-dense auto-rows-[50px] sm:auto-rows-[180px] md:auto-rows-[250px] gap-2 sm:gap-4 mb-4 sm:mb-8">
     <% _.forEach((gallery), (item) => { %>
     <div class="<%= item.col %> <%= item.row %> duration-6 anim anim-up" data-anim="hidden">
-      <a class="pack bg-grey h-full" data-movement="light" data-fancybox="gallery" href="img/pictures/restaurant.jpg">
+      <a class="h-full pack bg-grey" data-movement="light" data-fancybox="gallery" href="img/pictures/restaurant.jpg">
         <%= loader %>
         <%= picture({src: 'img/pictures/restaurant', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
         <% if (item.play) { %>
-        <div class="flex items-center justify-center absolute inset-0 bg-black bg-opacity-40 pointer-events-none">
-          <button class="btn btn-second bg-white text-50 md:text-404 rounded-max" data-waved="light">
+        <div class="absolute inset-0 flex items-center justify-center bg-black pointer-events-none bg-opacity-40">
+          <button class="bg-white btn btn-second text-50 md:text-404 rounded-max" data-waved="light">
             <span class="-m-2 md:-m-5">
               <%= icon({id: 'play'}) %>
             </span>
@@ -229,7 +229,7 @@
     <% }) %>
   </div>
   <div class="duration-6 anim anim-up" data-anim="hidden">
-    <button class="btn btn-primary btn-lg btn-fill w-full sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать стол</button>
+    <button class="w-full btn btn-primary btn-lg btn-fill sm:w-max" data-waved="light" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать стол</button>
   </div>
 </section>
 

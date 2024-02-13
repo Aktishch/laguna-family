@@ -1,18 +1,18 @@
 <% var icon = _.template(require('../components/icon.html').default) %>
 
-<dialog class="dialog dialog-xs p-0">
+<dialog class="p-0 dialog dialog-xs">
   <div class="relative overflow-hidden">
     <div class="absolute bottom-0 -right-full animate-pulse">
       <span class="text-second text-[100rem] opacity-50">
         <%= icon({id: 'lines'}) %>
       </span>
     </div>
-    <div class="flex flex-col items-center justify-center relative text-center py-16 sm:py-20 px-4 sm:px-8">
-      <span class="text-red text-404 mb-8 sm:mb-14">
+    <div class="relative flex flex-col items-center justify-center px-4 py-16 text-center sm:py-20 sm:px-8">
+      <span class="mb-8 text-red text-404 sm:mb-14">
         <%= icon({id: 'face'}) %>
       </span>
-      <h2 class="font-medium text-24 leading-2 mb-3">Ошибка</h2>
-      <p class="font-normal text-16 leading-3 opacity-60">Возникла непредвиденная ошибка</p>
+      <h2 class="mb-3 font-medium text-24 leading-2">Ошибка</h2>
+      <p class="font-normal leading-3 text-16 opacity-60">Возникла непредвиденная ошибка</p>
     </div>
   </div>
 </dialog>

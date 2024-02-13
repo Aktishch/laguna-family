@@ -4,14 +4,14 @@
   var loader = _.template(require('../components/loader.html').default)({icon: icon({id: 'loader'})})
 %>
 
-<dialog class="dialog dialog-xl p-0">
+<dialog class="p-0 dialog dialog-xl">
   <div class="grid grid-cols-1 lg:grid-cols-2">
-    <div class="py-10 sm:py-16 px-4 xs:px-10 sm:px-16">
-      <h2 class="font-normal text-32 sm:text-38 lg:text-46 leading-3 mb-7 xl:mb-12">Оставить заявку</h2>
-      <form class="form mb-6" data-form="submit">
-        <div class="grid grid-cols-1 xs:grid-cols-2 gap-5 mb-7 lg:mb-12">
+    <div class="px-4 py-10 sm:py-16 xs:px-10 sm:px-16">
+      <h2 class="font-normal leading-3 text-32 sm:text-38 lg:text-46 mb-7 xl:mb-12">Оставить заявку</h2>
+      <form class="mb-6 form" data-form="submit">
+        <div class="grid grid-cols-1 gap-5 xs:grid-cols-2 mb-7 lg:mb-12">
           <label class="xs:col-2 form-label" data-label="input">
-            <span class="font-medium text-16 leading-1 mb-3">Формат меропрития</span>
+            <span class="mb-3 font-medium text-16 leading-1">Формат меропрития</span>
             <div class="form-wrapper">
               <div class="input-cover">
                 <select class="input input-black input-lg" data-input="select" name="select">
@@ -29,7 +29,7 @@
             </div>
           </label>
           <label class="xs:col-2 form-label" data-label="input">
-            <span class="font-medium text-16 leading-1 mb-3">Имя</span>
+            <span class="mb-3 font-medium text-16 leading-1">Имя</span>
             <div class="form-wrapper">
               <div class="input-cover">
                 <input class="input input-black input-lg" data-input="name" type="text" placeholder="Напишите имя..." name="name">
@@ -38,7 +38,7 @@
             </div>
           </label>
           <label class="xs:col-2 form-label" data-label="input">
-            <span class="font-medium text-16 leading-1 mb-3">Ваш телефон</span>
+            <span class="mb-3 font-medium text-16 leading-1">Ваш телефон</span>
             <div class="form-wrapper">
               <div class="input-cover">
                 <input class="input input-black input-lg" data-input="tel" type="tel" placeholder="+ 7 (_ _ _) _ _ _ - _ _ - _ _" name="tel">
@@ -47,7 +47,7 @@
             </div>
           </label>
           <label class="xs:col-2 form-label" data-label="input">
-            <span class="font-medium text-16 leading-1 mb-3">Дата</span>
+            <span class="mb-3 font-medium text-16 leading-1">Дата</span>
             <div class="form-wrapper">
               <div class="input-cover">
                 <input class="input input-black input-lg" data-input="calendar" type="text" placeholder="_ _._ _._ _ _ _" name="date">
@@ -59,29 +59,29 @@
             </div>
           </label>
           <div class="flex flex-col">
-            <span class="font-medium text-16 leading-1 mb-3">Взрослые</span>
+            <span class="mb-3 font-medium text-16 leading-1">Взрослые</span>
             <div class="quantity" data-quantity>
-              <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-decrease data-waved="dark" type="button">-</button>
+              <button class="text-black quantity-btn btn btn-grey btn-fill" data-quantity-decrease data-waved="dark" type="button">-</button>
               <div class="quantity-cover input-cover">
                 <input class="quantity-input input" data-input="number" type="text" value="1" maxlength="3" name="quantity">
               </div>
-              <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-increase data-waved="dark" type="button">+</button>
+              <button class="text-black quantity-btn btn btn-grey btn-fill" data-quantity-increase data-waved="dark" type="button">+</button>
             </div>
           </div>
           <div class="flex flex-col">
-            <span class="font-medium text-16 leading-1 mb-3">Дети (от 3 до 14 лет)</span>
+            <span class="mb-3 font-medium text-16 leading-1">Дети (от 3 до 14 лет)</span>
             <div class="quantity" data-quantity>
-              <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-decrease data-waved="dark" type="button">-</button>
+              <button class="text-black quantity-btn btn btn-grey btn-fill" data-quantity-decrease data-waved="dark" type="button">-</button>
               <div class="quantity-cover input-cover">
                 <input class="quantity-input input" data-input="number" type="text" value="1" maxlength="3" name="quantity">
               </div>
-              <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-increase data-waved="dark" type="button">+</button>
+              <button class="text-black quantity-btn btn btn-grey btn-fill" data-quantity-increase data-waved="dark" type="button">+</button>
             </div>
           </div>
         </div>
-        <button class="btn btn-primary btn-lg btn-fill w-full xs:w-max" data-waved="light" type="submit">Оставить заявку на мероприятие</button>
+        <button class="w-full btn btn-primary btn-lg btn-fill xs:w-max" data-waved="light" type="submit">Оставить заявку на мероприятие</button>
       </form>
-      <div class="hover:underline underline-offset-4 text-12 leading-2 opacity-80 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных</div>
+      <div class="cursor-pointer hover:underline underline-offset-4 text-12 leading-2 opacity-80" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных</div>
     </div>
     <div class="hidden lg:block pack pack-rect-md bg-grey">
       <%= loader %>

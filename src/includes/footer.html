@@ -3,54 +3,54 @@
 
 <footer class="container bg-primary text-white <%= data.page === 'index' ? 'sm:pt-14 sm:pb-6' : 'pt-4 xl:pt-14 pb-4 xl:pb-6' %>" id="contacts">
   <% if (data.page === 'index') { %>
-  <div class="flex flex-col sm:flex-row sm:flex-wrap justify-between gap-10 lg:gap-20 border-b border-solid border-white border-opacity-5 pb-10 xl:pb-14 mb-4">
+  <div class="flex flex-col justify-between gap-10 pb-10 mb-4 border-b border-white border-solid sm:flex-row sm:flex-wrap lg:gap-20 border-opacity-5 xl:pb-14">
     <div class="flex flex-col items-start">
-      <a class="btn btn-white text-left text-36 leading-3 mb-6" href="" data-waved="light">Laguna <br class="hidden sm:block"> Family</a>
+      <a class="mb-6 leading-3 text-left btn btn-white text-36" href="" data-waved="light">Laguna <br class="hidden sm:block"> Family</a>
       <span class="font-normal text-14 leading-1">Семья ресторанов</span>
     </div>
     <div class="flex flex-col items-start">
-      <h3 class="font-normal text-18 sm:text-20 lg:text-24 leading-3 mb-5 sm:mb-8">Комплекс «Лагуна»</h3>
-      <p class="font-normal text-14 leading-4 mb-5 sm:mb-8">г. Геленджик, Лермонтовский <br> бульвар, д. 8а</p>
-      <a class="btn btn-white text-20 sm:text-22 mb-5 sm:mb-9" data-waved="light" href="tel: +7 (966) 760-99-66">
-        <span class="text-20 opacity-40 mr-2">
+      <h3 class="mb-5 font-normal leading-3 text-18 sm:text-20 lg:text-24 sm:mb-8">Комплекс «Лагуна»</h3>
+      <p class="mb-5 font-normal leading-4 text-14 sm:mb-8">г. Геленджик, Лермонтовский <br> бульвар, д. 8а</p>
+      <a class="mb-5 btn btn-white text-20 sm:text-22 sm:mb-9" data-waved="light" href="tel: +7 (966) 760-99-66">
+        <span class="mr-2 text-20 opacity-40">
           <%= icon({id: 'phone'}) %>
         </span>
         +7 (966) 760-99-66
       </a>
       <a class="btn btn-white text-14" data-waved="light" href="mailto: hello@laguna-family.rest">
-        <span class="text-20 opacity-40 mr-2">
+        <span class="mr-2 text-20 opacity-40">
           <%= icon({id: 'email'}) %>
         </span>
         hello@laguna-family.rest
       </a>
     </div>
     <div class="flex flex-col items-start">
-      <h3 class="font-normal text-18 sm:text-20 lg:text-24 leading-3 mb-5 sm:mb-8">«Клубный дом»</h3>
-      <p class="font-normal text-14 leading-4 mb-5 sm:mb-8">г. Геленджик, р-н Голубая бухта, <br> ул. Стартовая, д. 1</p>
-      <a class="btn btn-white text-20 sm:text-22 mb-5 sm:mb-9" data-waved="light" href="tel: +7 (928) 237-72-00">
-        <span class="text-20 opacity-40 mr-2">
+      <h3 class="mb-5 font-normal leading-3 text-18 sm:text-20 lg:text-24 sm:mb-8">«Клубный дом»</h3>
+      <p class="mb-5 font-normal leading-4 text-14 sm:mb-8">г. Геленджик, р-н Голубая бухта, <br> ул. Стартовая, д. 1</p>
+      <a class="mb-5 btn btn-white text-20 sm:text-22 sm:mb-9" data-waved="light" href="tel: +7 (928) 237-72-00">
+        <span class="mr-2 text-20 opacity-40">
           <%= icon({id: 'phone'}) %>
         </span>
         +7 (928) 237-72-00
       </a>
       <a class="btn btn-white text-14" data-waved="light" href="mailto: golfrest@laguna-family.rest">
-        <span class="text-20 opacity-40 mr-2">
+        <span class="mr-2 text-20 opacity-40">
           <%= icon({id: 'email'}) %>
         </span>
         golfrest@laguna-family.rest
       </a>
     </div>
     <div class="flex flex-col items-start">
-      <h3 class="font-normal text-18 sm:text-20 lg:text-24 leading-3 mb-5 sm:mb-8">Организация мероприятий</h3>
-      <p class="font-normal text-14 leading-4 opacity-40 mb-5 sm:mb-8">Банкетные залы для мероприятий <br> любого формата и масштаба</p>
-      <a class="btn btn-white text-20 sm:text-22 mb-5 sm:mb-9" data-waved="light" href="tel: +7 (928) 203-42-00">
-        <span class="text-20 opacity-40 mr-2">
+      <h3 class="mb-5 font-normal leading-3 text-18 sm:text-20 lg:text-24 sm:mb-8">Организация мероприятий</h3>
+      <p class="mb-5 font-normal leading-4 text-14 opacity-40 sm:mb-8">Банкетные залы для мероприятий <br> любого формата и масштаба</p>
+      <a class="mb-5 btn btn-white text-20 sm:text-22 sm:mb-9" data-waved="light" href="tel: +7 (928) 203-42-00">
+        <span class="mr-2 text-20 opacity-40">
           <%= icon({id: 'phone'}) %>
         </span>
         +7 (928) 203-42-00
       </a>
       <a class="btn btn-white text-14" data-waved="light" href="mailto: event@laguna-family.rest">
-        <span class="text-20 opacity-40 mr-2">
+        <span class="mr-2 text-20 opacity-40">
           <%= icon({id: 'email'}) %>
         </span>
         event@laguna-family.rest
@@ -58,21 +58,21 @@
     </div>
   </div>
   <% } else { %>
-  <div class="hidden xl:flex flex-wrap justify-between gap-20 border-b border-solid border-white border-opacity-5 pb-14 mb-4">
+  <div class="flex-wrap justify-between hidden gap-20 mb-4 border-b border-white border-solid xl:flex border-opacity-5 pb-14">
     <div class="flex flex-col items-start">
       <% if (data.page === 'club') { %>
-      <a class="btn btn-white w-40 mb-9" data-waved="light" href="/">
+      <a class="w-40 btn btn-white mb-9" data-waved="light" href="/">
         <%= picture({src: 'img/pictures/logo-club-house', format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
       </a>
-      <p class="font-normal text-16 leading-3 opacity-40 mb-9">
+      <p class="font-normal leading-3 text-16 opacity-40 mb-9">
         Особая инфраструктура, не имеющая <br>
         аналогов на Черноморском побережье.
       </p>
       <% } else if (data.page === 'laguna' || data.page === 'laguna-restaurant' || data.page === 'laguna-beach' || data.page === 'laguna-club') { %>
-      <a class="btn btn-white w-56 mb-9" data-waved="light" href="/">
+      <a class="w-56 btn btn-white mb-9" data-waved="light" href="/">
         <%= picture({src: 'img/pictures/logo-laguna', format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
       </a>
-      <p class="font-normal text-16 leading-3 opacity-40 mb-9">
+      <p class="font-normal leading-3 text-16 opacity-40 mb-9">
         Лагуна Family - это место с уникальной <br>
         инфраструктурой, не имеющей аналогов <br>
         на Черноморском побережье
@@ -85,7 +85,7 @@
       </ul>
     </div>
     <div class="flex flex-col items-start">
-      <h3 class="font-normal text-24 leading-3 mb-8">Навигация</h3>
+      <h3 class="mb-8 font-normal leading-3 text-24">Навигация</h3>
       <nav class="flex flex-col items-start gap-2">
         <a class="btn btn-white opacity-80" data-waved="light" href="">Семейный ресторан</a>
         <a class="btn btn-white opacity-80" data-waved="light" href="">Бассейн с пляжным клубом</a>
@@ -96,16 +96,16 @@
       </nav>
     </div>
     <div class="flex flex-col items-start">
-      <h3 class="font-normal text-24 leading-3 mb-8">Контакты</h3>
-      <p class="font-normal text-14 leading-4 mb-8">Россия, Краснодарский край, <br>Геленджик, Голубая бухта, ул. Стартовая 1</p>
+      <h3 class="mb-8 font-normal leading-3 text-24">Контакты</h3>
+      <p class="mb-8 font-normal leading-4 text-14">Россия, Краснодарский край, <br>Геленджик, Голубая бухта, ул. Стартовая 1</p>
       <a class="btn btn-white text-22 mb-9" data-waved="light" href="tel: +7 (928) 237-72-00">
-        <span class="text-20 opacity-40 mr-2">
+        <span class="mr-2 text-20 opacity-40">
           <%= icon({id: 'phone'}) %>
         </span>
         +7 (928) 237-72-00
       </a>
       <a class="btn btn-white text-14" data-waved="light" href="mailto: golfrest@laguna-family.rest">
-        <span class="text-20 opacity-40 mr-2">
+        <span class="mr-2 text-20 opacity-40">
           <%= icon({id: 'email'}) %>
         </span>
         golfrest@laguna-family.rest

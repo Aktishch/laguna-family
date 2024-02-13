@@ -18,19 +18,19 @@
 <!-- Главный блок -->
 
 <main class="main container flex items-center justify-center relative bg-primary overflow-hidden min-h-screen sm:min-h-[700px] lg:min-h-[800px] xl:min-h-[960px]">
-  <div class="main__bg absolute inset-0">
-    <div class="pack h-full duration-10 anim anim-decrease" data-anim="hidden">
+  <div class="absolute inset-0 main__bg">
+    <div class="h-full pack duration-10 anim anim-decrease" data-anim="hidden">
       <!-- <%= picture({src: 'img/pictures/main-bg', format: '.png', webp: true, classes: 'image', data: false, loading: 'eager'}) %> -->
       <video class="image" src="media/video.mp4" poster="img/pictures/main-bg.jpg" autoplay loop muted></video>
     </div>
   </div>
   <div class="relative">
-    <div class="flex items-center justify-center absolute -top-14 lg:-top-24 left-0 right-0 ease-linear duration-8 anim anim-circle" data-anim="hidden">
+    <div class="absolute left-0 right-0 flex items-center justify-center ease-linear -top-14 lg:-top-24 duration-8 anim anim-circle" data-anim="hidden">
       <%= picture({src: 'img/pictures/main-circle', format: '.png', webp: true, classes: 'block w-44 lg:w-72 h-44 lg:h-72', data: false, loading: 'eager'}) %>
     </div>
-    <div class="flex flex-col items-center justify-center relative text-center text-white">
-      <h1 class="font-light text-40 sm:text-50 lg:text-title leading-1 mb-3 sm:mb-0 ease-linear duration-10 clip-path clip-path-left" data-anim="hidden">Laguna Family</h1>
-      <h3 class="font-normal text-14 sm:text-16 leading-1 ease-linear duration-10 delay-3 clip-path clip-path-right" data-anim="hidden">Семья ресторанов</h3>
+    <div class="relative flex flex-col items-center justify-center text-center text-white">
+      <h1 class="mb-3 font-light ease-linear text-40 sm:text-50 lg:text-title leading-1 sm:mb-0 duration-10 clip-path clip-path-left" data-anim="hidden">Laguna Family</h1>
+      <h3 class="font-normal ease-linear text-14 sm:text-16 leading-1 duration-10 delay-3 clip-path clip-path-right" data-anim="hidden">Семья ресторанов</h3>
     </div>
   </div>
 </main>
@@ -52,18 +52,18 @@
   }
 ] %>
 
-<section class="services container bg-primary text-white overflow-hidden xl:px-7" id="projects-1">
-  <h2 class="font-normal text-center text-36 sm:text-42 lg:text-subtitle leading-3 mb-2 ease-linear duration-8 clip-path clip-path-down" data-anim="hidden">Развлекательный комплекс ЛАГУНА</h2>
-  <h3 class="font-normal text-center text-16 sm:text-20 lg:text-24 opacity-60 leading-3 mb-6 sm:mb-8 lg:mb-12 ease-linear duration-8 clip-path clip-path-down" data-anim="hidden">Пространство для отдыха и развлечения всей семьи</h3>
+<section class="container overflow-hidden text-white services bg-primary xl:px-7" id="projects-1">
+  <h2 class="mb-2 font-normal leading-3 text-center ease-linear text-36 sm:text-42 lg:text-subtitle duration-8 clip-path clip-path-down" data-anim="hidden">Развлекательный комплекс ЛАГУНА</h2>
+  <h3 class="mb-6 font-normal leading-3 text-center ease-linear text-16 sm:text-20 lg:text-24 opacity-60 sm:mb-8 lg:mb-12 duration-8 clip-path clip-path-down" data-anim="hidden">Пространство для отдыха и развлечения всей семьи</h3>
   <div class="services-slider mb-7 sm:mb-12">
-    <div class="swiper overflow-visible">
+    <div class="overflow-visible swiper">
       <div class="swiper-wrapper">
         <% for (var i = 0; i < services.length; i++) { %>
-        <a class="swiper-slide h-full" href="">
+        <a class="h-full swiper-slide" href="">
           <div class="pack pack-box sm:pack-rect-lg lg:pack-[70] bg-grey h-full" data-movement="light">
             <%= loader %>
             <%= picture({src: 'img/pictures/service', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
-            <div class="services__gradient flex items-end absolute inset-0 pointer-events-none p-4 lg:p-8">
+            <div class="absolute inset-0 flex items-end p-4 pointer-events-none services__gradient lg:p-8">
               <div class="flex items-center text-white">
                 <div class="services__square flex items-center justify-center text-26 lg:text-40 backdrop-blur-md w-10 lg:w-16 min-w-[40px] lg:min-w-[64px] h-10 lg:h-16 mr-3 lg:mr-6">
                   <%= icon({id: services[i].icon}) %>
@@ -75,10 +75,10 @@
         </a>
         <% } %>
       </div>
-      <div class="swiper-pagination md:hidden text-white mt-6"></div>
+      <div class="mt-6 text-white swiper-pagination md:hidden"></div>
     </div>
   </div>
-  <a class="btn btn-white btn-lg btn-contur w-max mx-auto" data-waved="light" href="">Узнать подробнее</a>
+  <a class="mx-auto btn btn-white btn-lg btn-contur w-max" data-waved="light" href="">Узнать подробнее</a>
 </section>
 
 <!-- Услуги -->
@@ -98,18 +98,18 @@
   }
 ] %>
 
-<section class="services container overflow-hidden xl:px-7" id="projects-2">
-  <h2 class="font-normal text-center text-36 sm:text-42 lg:text-subtitle leading-3 mb-2 ease-linear duration-8 clip-path clip-path-down" data-anim="hidden">Ресторан CLUB HOUSE</h2>
-  <h3 class="font-normal text-center text-16 sm:text-20 lg:text-24 opacity-60 leading-3 mb-6 sm:mb-8 lg:mb-12 ease-linear duration-8 clip-path clip-path-down" data-anim="hidden">в Геленджик Гольф Резорт</h3>
+<section class="container overflow-hidden services xl:px-7" id="projects-2">
+  <h2 class="mb-2 font-normal leading-3 text-center ease-linear text-36 sm:text-42 lg:text-subtitle duration-8 clip-path clip-path-down" data-anim="hidden">Ресторан CLUB HOUSE</h2>
+  <h3 class="mb-6 font-normal leading-3 text-center ease-linear text-16 sm:text-20 lg:text-24 opacity-60 sm:mb-8 lg:mb-12 duration-8 clip-path clip-path-down" data-anim="hidden">в Геленджик Гольф Резорт</h3>
   <div class="services-slider mb-7 sm:mb-12">
-    <div class="swiper overflow-visible">
+    <div class="overflow-visible swiper">
       <div class="swiper-wrapper">
         <% for (var i = 0; i < services.length; i++) { %>
-        <a class="swiper-slide h-full" href="">
+        <a class="h-full swiper-slide" href="">
           <div class="pack pack-box sm:pack-rect-lg lg:pack-[70] bg-grey h-full" data-movement="light">
             <%= loader %>
             <%= picture({src: 'img/pictures/service', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
-            <div class="services__gradient flex items-end absolute inset-0 pointer-events-none p-4 lg:p-8">
+            <div class="absolute inset-0 flex items-end p-4 pointer-events-none services__gradient lg:p-8">
               <div class="flex items-center text-white">
                 <div class="services__square flex items-center justify-center text-26 lg:text-40 backdrop-blur-md w-10 lg:w-16 min-w-[40px] lg:min-w-[64px] h-10 lg:h-16 mr-3 lg:mr-6">
                   <%= icon({id: services[i].icon}) %>
@@ -122,9 +122,9 @@
         <% } %>
       </div>
     </div>
-    <div class="swiper-pagination md:hidden text-primary mt-6"></div>
+    <div class="mt-6 swiper-pagination md:hidden text-primary"></div>
   </div>
-  <a class="btn btn-black btn-lg btn-contur w-max mx-auto" data-waved="dark" href="">Узнать подробнее</a>
+  <a class="mx-auto btn btn-black btn-lg btn-contur w-max" data-waved="dark" href="">Узнать подробнее</a>
 </section>
 
 <!-- Услуги -->
@@ -144,18 +144,18 @@
   }
 ] %>
 
-<section class="services container bg-grey overflow-hidden xl:px-7" id="projects-3">
-  <h2 class="font-normal text-center text-36 sm:text-42 lg:text-subtitle leading-3 mb-2 ease-linear duration-8 clip-path clip-path-down" data-anim="hidden">Организация мероприятий</h2>
-  <h3 class="font-normal text-center text-16 sm:text-20 lg:text-24 opacity-60 leading-3 mb-6 sm:mb-8 lg:mb-12 ease-linear duration-8 clip-path clip-path-down" data-anim="hidden">Банкетные залы</h3>
+<section class="container overflow-hidden services bg-grey xl:px-7" id="projects-3">
+  <h2 class="mb-2 font-normal leading-3 text-center ease-linear text-36 sm:text-42 lg:text-subtitle duration-8 clip-path clip-path-down" data-anim="hidden">Организация мероприятий</h2>
+  <h3 class="mb-6 font-normal leading-3 text-center ease-linear text-16 sm:text-20 lg:text-24 opacity-60 sm:mb-8 lg:mb-12 duration-8 clip-path clip-path-down" data-anim="hidden">Банкетные залы</h3>
   <div class="services-slider mb-7 sm:mb-12">
-    <div class="swiper overflow-visible">
+    <div class="overflow-visible swiper">
       <div class="swiper-wrapper">
         <% for (var i = 0; i < services.length; i++) { %>
-        <a class="swiper-slide h-full" href="">
+        <a class="h-full swiper-slide" href="">
           <div class="pack pack-box sm:pack-rect-lg lg:pack-[70] bg-grey h-full" data-movement="light">
             <%= loader %>
             <%= picture({src: 'img/pictures/service', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
-            <div class="services__gradient flex items-end absolute inset-0 pointer-events-none p-4 lg:p-8">
+            <div class="absolute inset-0 flex items-end p-4 pointer-events-none services__gradient lg:p-8">
               <div class="flex items-center text-white">
                 <div class="services__square flex items-center justify-center text-26 lg:text-40 backdrop-blur-md w-10 lg:w-16 min-w-[40px] lg:min-w-[64px] h-10 lg:h-16 mr-3 lg:mr-6">
                   <%= icon({id: services[i].icon}) %>
@@ -168,9 +168,9 @@
         <% } %>
       </div>
     </div>
-    <div class="swiper-pagination md:hidden text-primary mt-6"></div>
+    <div class="mt-6 swiper-pagination md:hidden text-primary"></div>
   </div>
-  <a class="btn btn-black btn-lg btn-contur w-max mx-auto" data-waved="dark" href="">Узнать подробнее</a>
+  <a class="mx-auto btn btn-black btn-lg btn-contur w-max" data-waved="dark" href="">Узнать подробнее</a>
 </section>
 
 <%= footer({data, loader, icon, picture}) %>
