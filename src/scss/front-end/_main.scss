@@ -1,3 +1,10 @@
+// Шапка документа
+.header {
+  &__listing {
+    background-image: linear-gradient(196.72deg, theme("colors.white.DEFAULT / 10%") 11.55%, transparent 37.65%);
+  }
+}
+
 // Меню
 .menu {
   &[data-sidebar="open"] {

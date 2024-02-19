@@ -121,13 +121,13 @@
   <!-- Шапка документа -->
 
   <% if (data.page === 'index') { %>
-  <header class="container fixed top-0 left-0 right-0 flex items-center justify-between gap-3 py-4 sm:gap-6 z-3 bg-opacity-90 xl:py-8 duration-2" data-header>
+  <header class="container fixed top-0 left-0 right-0 flex items-center justify-between gap-3 py-4 header sm:gap-6 z-3 bg-opacity-90 xl:py-8 duration-2" data-header>
     <a class="btn btn-white text-16 sm:text-20 md:text-24" data-waved="light" data-scroll href="#projects-1">Laguna Family</a>
     <div class="flex items-center sm:gap-8 lg:gap-14">
       <div class="relative" data-accordion="hidden" data-accordion-close="click">
         <button class="btn btn-white" data-accordion-toggle data-waved="light">Контакты</button>
         <div class="absolute right-0 w-64 top-7 sm:w-80" data-accordion-content>
-          <div class="flex flex-col gap-4 p-4 text-white sm:gap-6 bg-primary sm:p-8">
+          <div class="flex flex-col gap-4 p-4 text-white header__listing sm:gap-6 bg-primary sm:p-8">
             <div class="flex flex-col items-start gap-4 pb-4 border-b border-white border-solid border-opacity-10 sm:pb-6 last:pb-0 last:border-none">
               <%= picture({src: 'img/pictures/logo-laguna-gold', format: '.png', webp: true, classes: 'block w-24', data: false, loading: 'auto'}) %>
               <span class="font-normal text-14 leading-2">Развлекательный комплекс ЛАГУНА</span>
@@ -149,7 +149,7 @@
       <div class="relative hidden sm:block" data-accordion="hidden" data-accordion-close="click">
         <button class="btn btn-white btn-lg btn-contur" data-accordion-toggle data-waved="light">Проекты</button>
         <div class="absolute right-0 w-64 top-12 sm:w-80" data-accordion-content>
-          <div class="flex flex-col gap-4 p-4 text-white sm:gap-6 bg-primary sm:p-8">
+          <div class="flex flex-col gap-4 p-4 text-white header__listing sm:gap-6 bg-primary sm:p-8">
             <div class="flex flex-col items-start pb-4 border-b border-white border-solid border-opacity-10 sm:pb-6 last:pb-0 last:border-none">
               <%= picture({src: 'img/pictures/logo-laguna-gold', format: '.png', webp: true, classes: 'block w-24 mb-4', data: false, loading: 'auto'}) %>
               <span class="mb-1 font-normal text-14 leading-2 opacity-60">Развлекательный комплекс ЛАГУНА</span>
