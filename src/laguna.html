@@ -111,17 +111,17 @@
       <div class="swiper-wrapper">
         <% for (var i = 0; i < 3; i++) { %>
         <div class="h-auto swiper-slide">
-          <div class="h-full pb-1 card card-active">
-            <div class="mb-8 pack pack-box bg-grey" data-movement="light">
+          <div class="h-full pb-1 card">
+            <a class="mb-8 pack pack-box bg-grey" href="/" draggable="false">
               <%= loader %>
-              <%= picture({src: 'img/pictures/complex', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
-            </div>
+              <%= picture({src: 'img/pictures/complex', format: '.jpg', webp: true, classes: 'image image-rise', data: 'draggable="false"', loading: 'lazy'}) %>
+            </a>
             <div class="card-content">
               <h4 class="mb-4 font-medium leading-3 text-20 sm:text-24">Семейный ресторан с детской игровой комнатой</h4>
               <p class="mb-6 font-normal leading-4 text-14 sm:text-16 opacity-60 lg:mb-10">
                 Ресторан европейской кухни с панорамным видом как на бухту Геленджика, так и на шикарную морскую набережную города.
               </p>
-              <button class="w-full mt-auto btn btn-white btn-lg btn-contur sm:w-max" data-waved="light">Подробнее</button>
+              <a class="w-full mt-auto btn btn-white btn-lg btn-contur sm:w-max swiper-no-swiping" data-waved="light" href="/" draggable="false">Подробнее</a>
             </div>
           </div>
         </div>
@@ -214,7 +214,7 @@
         <% }) %>
       </ul>
       <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-        <a class="flex-grow btn btn-black btn-lg btn-fill" data-waved="light" href="" download>Скачать презентацию</a>
+        <a class="flex-grow btn btn-black btn-lg btn-fill" data-waved="light" href="" target="_blank">Скачать презентацию</a>
         <button class="flex-grow btn btn-black btn-lg btn-contur" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Оставить заявку</button>
       </div>
     </div>
