@@ -16,8 +16,6 @@ export default (): void => {
   calendars.forEach((element: Element) => {
     const calendar = element as HTMLInputElement
 
-    console.log(calendar.dataset.position)
-
     new window.AirDatepicker(calendar, {
       locale: localeRu,
       isMobile: true,
