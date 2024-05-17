@@ -82,6 +82,12 @@
         <button class="w-full btn btn-primary btn-lg btn-fill xs:w-max" data-waved="light" type="submit">Оставить заявку на мероприятие</button>
       </form>
       <div class="cursor-pointer hover:underline underline-offset-4 text-12 leading-2 opacity-80" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных</div>
+      <div class="flex mt-3 text-12 text-second">
+        <span class="mr-1">
+          <%= icon({id: 'check'}) %>
+        </span>
+        <p class="font-normal leading-1">Бронирование считается действительным только при подтверждении хостес</p>
+      </div>
     </div>
     <div class="hidden lg:block pack pack-rect-md bg-grey">
       <%= loader %>
