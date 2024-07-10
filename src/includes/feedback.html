@@ -1,4 +1,11 @@
 <section class="container relative overflow-hidden bg-grey">
+  <% if (data.page === 'oliva') { %>
+  <div class="absolute inset-0">
+    <div class="h-full pack">
+      <%= picture({src: 'img/pictures/bg-fade', format: '.png', webp: true, classes: 'image', data: false, loading: 'eager'}) %>
+    </div>
+  </div>
+  <% } %>
   <div class="absolute inset-0 xxl:max-w-[1920px] p-4 sm:p-0 xxl:mx-auto duration-6 anim anim-left" data-anim="hidden">
     <div class="pack pack-rect-lg bg-grey w-full max-w-[950px] sm:h-full">
       <%= loader %>

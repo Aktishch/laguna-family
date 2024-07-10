@@ -2,15 +2,12 @@
 
 module.exports = {
   content: ['./src/**/*.html', './src/ts/**/*.ts'],
-
   corePlugins: {
     container: false,
   },
-
   future: {
     hoverOnlyWhenSupported: true,
   },
-
   theme: {
     screens: {
       xs: 459.98 + 'px',
@@ -20,38 +17,33 @@ module.exports = {
       xl: 1365.98 + 'px',
       xxl: 2559.98 + 'px',
     },
-
     colors: {
       primary: {
         DEFAULT: '#0E1825',
         light: '#132030',
       },
-
       second: {
         DEFAULT: '#CCA352',
       },
-
       black: {
         DEFAULT: '#1E1E1E',
       },
-
       white: {
         DEFAULT: '#ffffff',
       },
-
       grey: {
         DEFAULT: '#E9ECEF',
       },
-
       red: {
         DEFAULT: '#C03535',
       },
+      green: {
+        DEFAULT: '#65865C',
+      },
     },
-
     fontFamily: {
       base: 'var(--font-base)',
     },
-
     lineHeight: {
       1: 1.1,
       2: 1.2,
@@ -63,7 +55,6 @@ module.exports = {
       8: 1.8,
       9: 1.9,
     },
-
     borderRadius: {
       1: '4px',
       2: '8px',
@@ -80,7 +71,6 @@ module.exports = {
       max: '50%',
       inherit: 'inherit',
     },
-
     transitionDuration: {
       0: '0s',
       1: '0.1s',
@@ -94,7 +84,6 @@ module.exports = {
       9: '0.9s',
       10: '1s',
     },
-
     transitionDelay: {
       0: '0s',
       1: '0.1s',
@@ -108,7 +97,6 @@ module.exports = {
       9: '0.9s',
       10: '1s',
     },
-
     zIndex: {
       0: 0,
       1: 100,
@@ -123,18 +111,15 @@ module.exports = {
       10: 1000,
       auto: 'auto',
     },
-
     extend: {
       content: {
         auto: '""',
       },
-
       backgroundColor: {
         current: 'currentColor',
         inherit: 'inherit',
         transparent: 'transparent',
       },
-
       fontSize: {
         8: '0.5rem',
         10: '0.625rem',
@@ -162,13 +147,11 @@ module.exports = {
         title: '6rem',
         404: '8rem',
       },
-
       borderColor: {
         current: 'currentColor',
         inherit: 'inherit',
         transparent: 'transparent',
       },
-
       gridColumn: {
         1: 'span 1',
         2: 'span 2',
@@ -183,7 +166,6 @@ module.exports = {
         11: 'span 11',
         12: 'span 12',
       },
-
       gridRow: {
         1: 'span 1',
         2: 'span 2',
@@ -199,7 +181,6 @@ module.exports = {
         12: 'span 12',
       },
     },
-
     size: {
       xs: '28px',
       sm: '36px',
@@ -209,7 +190,6 @@ module.exports = {
       xxl: '64px',
     },
   },
-
   plugins: [
     require('./plugins/container'),
     require('./plugins/dialog'),

@@ -1,0 +1,279 @@
+<%
+  var data = {
+    page: 'oliva',
+    title: 'Oliva',
+    status: true
+  }
+
+  var icon = _.template(require('./components/icon.html').default)
+  var picture = _.template(require('./components/picture.html').default)
+  var loader = _.template(require('./components/loader.html').default)({icon: icon({id: 'loader'})})
+  var preloader = require('./components/preloader.html').default
+  var header = _.template(require('./includes/header.html').default)
+  var feedback = _.template(require('./includes/feedback.html').default)
+  var footer = _.template(require('./includes/footer.html').default)
+%>
+
+<%= header({data, loader, preloader, icon, picture}) %>
+
+<!-- Главный блок -->
+
+<main class="main container flex items-center justify-center relative bg-primary overflow-hidden min-h-screen sm:min-h-[700px] lg:min-h-[800px] xl:min-h-[990px] pt-36 lg:pt-52">
+  <div class="absolute inset-0 main__gradient">
+    <div class="h-full pack duration-10 anim anim-decrease" data-anim="hidden">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/main-bg-laguna', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="relative flex flex-col items-center justify-center text-center text-white z-1">
+    <h1 class="mb-3 font-normal leading-3 ease-linear text-32 sm:text-40 lg:text-subtitle sm:mb-2 duration-4 delay-1 anim anim-up" data-anim="hidden">SPA-комплекс OLIVA</h1>
+    <h3 class="mb-10 font-normal leading-3 ease-linear text-20 lg:text-24 duration-6 delay-2 anim anim-up" data-anim="hidden">Атмосфера роскоши, панорамный вид на бухту, эксклюзивный отдых</h3>
+    <div class="ease-linear duration-6 delay-3 anim anim-up" data-anim="hidden">
+      <button class="text-black btn btn-white btn-lg btn-fill btn-glow" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Забронировать</button>
+    </div>
+  </div>
+</main>
+
+<!-- SPA-комплекс -->
+
+<% var complex = [
+  'Парные: хамам, лакониум, русские и финская бани',
+  'Спа-процедуры, авторские программы для релаксации и здоровья.',
+  'Салон красоты и массажный кабинет'
+] %>
+
+<section class="container relative overflow-hidden container-xs">
+  <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-left" data-anim="hidden">
+    <div class="pack pack-rect-lg bg-grey w-full max-w-[1000px] sm:h-full">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/beach', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="relative bg-white sm:w-full sm:max-w-[540px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-10 sm:mb-5 xl:mb-10 mr-2 sm:mr-0 sm:ml-auto duration-6 anim anim-right" data-anim="hidden">
+    <div class="px-4 py-6 border border-solid border-second sm:py-10 xl:py-12 sm:px-7">
+      <h2 class="mb-2 font-normal leading-3 text-32 sm:text-38 lg:text-46 sm:mb-4">SPA-комплекс</h2>
+      <p class="mb-8 font-normal leading-4 text-14 sm:text-16 sm:mb-10">
+        Пространство для релаксации души и тела
+      </p>
+      <ul class="flex flex-col gap-4 mb-16 sm:mb-40 xl:mb-72">
+        <% _.forEach((complex), (item) => { %>
+        <li class="flex items-center">
+          <span class="mr-2 text-24 sm:text-28 text-green">
+            <%= icon({id: 'olive'}) %>
+          </span>
+          <p class="font-medium leading-3 text-14 sm:text-16"><%= item %></p>
+        </li>
+        <% }) %>
+      </ul>
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+        <button class="btn btn-second btn-lg btn-fill" data-waved="dark" data-fancybox-feedback data-type="ajax" data-src="dialogs/dialog-feedback.html">Записаться на SPA</button>
+        <button class="btn btn-black btn-lg btn-contur" data-waved="dark" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-scheme.html">Прайс-лист</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ресторан OLIVA -->
+
+<% var oliva = [
+  'Два просторных зала с террасой',
+  'Интерьер с восточными орнаментами и элементами из дерева',
+  'Пляжный бар с авторскими коктейлями',
+  'Открытый мангал и дровяная пицца-печь'
+] %>
+
+<section class="container relative overflow-hidden text-white bg-white">
+  <div class="absolute inset-0">
+    <div class="h-full pack">
+      <%= picture({src: 'img/pictures/bg-fade', format: '.png', webp: true, classes: 'image', data: false, loading: 'eager'}) %>
+    </div>
+  </div>
+  <div class="relative flex flex-col gap-4 xl:flex-row xl:justify-between xl:gap-0">
+    <div class="bg-green relative z-1 w-full xl:max-w-[475px] p-2 xl:mt-5 xl:-mr-10 duration-6 anim anim-up" data-anim="hidden">
+      <div class="flex flex-col h-full px-4 py-4 border border-solid border-second sm:py-7 lg:py-10 sm:px-7">
+        <h2 class="mb-4 font-normal leading-3 text-32 sm:text-38 lg:text-46">Ресторан OLIVA</h2>
+        <p class="font-normal leading-4 text-14 sm:tet-16 mb-7 sm:mb-10">Ресторан от шефа Аделя Хаматова</p>
+        <ul class="flex flex-col gap-4 mb-16 sm:mb-32 xl:mb-48">
+          <% _.forEach((oliva), (item) => { %>
+          <li class="flex items-center">
+            <span class="mr-2 sm:mr-4 text-24 sm:text-28">
+              <%= icon({id: 'olive'}) %>
+            </span>
+            <p class="font-normal leading-3 text-14 sm:text-16 opacity-80"><%= item %></p>
+          </li>
+          <% }) %>
+        </ul>
+        <div class="flex flex-col gap-4 mt-auto sm:flex-row sm:items-center sm:justify-between">
+          <a class="flex-grow px-3 btn btn-second btn-lg btn-fill" data-waved="dark" href="" target="_blank">Посмотреть меню</a>
+          <a class="flex-grow px-3 btn btn-white btn-lg btn-contur" data-waved="light" href="">Винная и барная карта</a>
+        </div>
+      </div>
+    </div>
+    <div class="grid w-full grid-cols-2 gap-2 xl:flex md:gap-3">
+      <div class="w-full xl:max-w-[450px]">
+        <div class="pack pack-box xl:pack-[0] bg-grey h-full">
+          <%= loader %>
+          <%= picture({src: 'img/pictures/cook', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+        </div>
+      </div>
+      <div class="w-full xl:max-w-[350px]">
+        <div class="pack pack-box xl:pack-[0] bg-grey h-full">
+          <%= loader %>
+          <%= picture({src: 'img/pictures/cook', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Открытый бассейн -->
+
+<% var beach = [
+  'Подогреваемый бассейн с аттракционами и детской плавательной зоной',
+  'Шезлонги, кабаносы, ракушки',
+  'Гидромассаж и фонтаны',
+  'Детская анимация, диджей и ведущий по выходным'
+] %>
+
+<section class="container relative overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="h-full pack">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/main-bg-laguna', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="relative w-full md:max-w-[510px] bg-white/90 backdrop-blur-lg py-7 sm:py-10 xl:py-14 px-4 sm:px-6 lg:px-10 flex flex-col">
+    <h2 class="mb-4 font-normal leading-3 text-32 sm:text-38 lg:text-46">Открытый бассейн</h2>
+    <p class="font-normal leading-4 text-14 sm:tet-16 mb-7 sm:mb-10">Открытый бассейн с панорамным видом
+      на взлетную полосу и бухту Геленджика</p>
+    <ul class="flex flex-col gap-4 mb-16 sm:mb-32 xl:mb-48">
+      <% _.forEach((beach), (item) => { %>
+      <li class="flex items-center">
+        <span class="mr-2 text-24 sm:text-28 text-green">
+          <%= icon({id: 'olive'}) %>
+        </span>
+        <p class="font-normal leading-3 text-14 sm:text-16"><%= item %></p>
+      </li>
+      <% }) %>
+    </ul>
+    <div class="flex flex-col gap-4 mt-auto sm:flex-row sm:items-center sm:justify-between">
+      <a class="flex-grow px-3 btn btn-second btn-lg btn-fill" data-waved="dark" href="" target="_blank">Забронировать</a>
+      <a class="flex-grow px-3 btn btn-black btn-lg btn-contur" data-waved="dark" href="">Прайс-лист</a>
+    </div>
+  </div>
+</section>
+
+<!-- Галерея -->
+
+<% var gallery = [
+  {
+    col: '',
+    row: 'row-2 sm:row-1'
+  },
+  {
+    col: '',
+    row: 'row-2 sm:row-1'
+  },
+  {
+    col: 'col-2 xl:col-1',
+    row: 'row-3 sm:row-1'
+  },
+  {
+    col: 'col-2 xl:col-3',
+    row: 'row-3 sm:row-2'
+  },
+  {
+    col: '',
+    row: 'row-4 sm:row-2'
+  },
+  {
+    col: '',
+    row: 'row-2 sm:row-1'
+  },
+  {
+    col: '',
+    row: 'row-4 sm:row-2'
+  },
+  {
+    col: '',
+    row: 'row-2 sm:row-1'
+  }
+] %>
+
+<section class="container container-xs">
+  <h2 class="mb-8 font-normal leading-3 text-center sm:text-left text-32 sm:text-38 lg:text-46 sm:mb-12 duration-6 anim anim-up" data-anim="hidden">Галерея событий</h2>
+  <div class="grid grid-cols-2 xl:grid-cols-3 grid-flow-dense auto-rows-[50px] sm:auto-rows-[180px] md:auto-rows-[250px] gap-2 sm:gap-4">
+    <% for (var i = 0; i < gallery.length; i++) { %>
+    <div class="<%= gallery[i].col %> <%= gallery[i].row %> duration-6 anim anim-up" data-anim="hidden">
+      <a class="h-full pack bg-grey" data-movement="light" data-fancybox="gallery" href="img/pictures/beach.jpg">
+        <%= loader %>
+        <%= picture({src: 'img/pictures/beach', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
+        <% if (i === 3) { %>
+        <div class="absolute inset-0 flex items-center justify-center bg-black pointer-events-none bg-opacity-40">
+          <button class="bg-white btn btn-second text-50 md:text-404 rounded-max" data-waved="light">
+            <span class="-m-2 md:-m-5">
+              <%= icon({id: 'play'}) %>
+            </span>
+          </button>
+        </div>
+        <% } %>
+      </a>
+    </div>
+    <% } %>
+  </div>
+  <div class="flex mt-8">
+    <a class="btn btn-second btn-lg btn-fill" data-waved="dark" href="">Перейти в галерею</a>
+  </div>
+</section>
+
+<!-- Прайс -->
+
+<section class="container relative overflow-hidden text-white container-xs">
+  <div class="absolute inset-0">
+    <div class="h-full pack bg-green">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/price-bg', format: '.jpg', webp: true, classes: 'image image-top-left', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="relative w-full sm:max-w-[410px]">
+    <h2 class="mb-2 font-normal leading-3 text-32 sm:text-38 lg:text-46 sm:mb-4 duration-6 anim anim-right" data-anim="hidden">Прайс-лист <br> на все услуги</h2>
+    <p class="mb-10 font-normal leading-4 text-14 sm:text-16 sm:mb-12 duration-6 anim anim-right" data-anim="hidden">
+      Здесь вы можете узнать цены на SPA-услуги
+    </p>
+    <div class="flex duration-6 anim anim-up" data-anim="hidden">
+      <a class="btn btn-second btn-lg btn-fill" data-waved="dark" href="">Ознакомиться</a>
+    </div>
+  </div>
+</section>
+
+<!-- Скидка 10% -->
+
+<section class="container relative overflow-hidden container-xs">
+  <div class="container container-xs absolute inset-0 xxl:max-w-[1920px] xxl:mx-auto sm:px-5 xl:px-20 duration-6 anim anim-left" data-anim="hidden">
+    <%= picture({src: 'img/pictures/flowers-bg', format: '.png', webp: true, classes: 'block absolute left-0 bottom-0 w-full  max-w-96', data: false, loading: 'lazy'}) %>
+    <div class="pack pack-rect-lg bg-grey w-full max-w-[1000px] sm:h-full ml-auto">
+      <%= loader %>
+      <%= picture({src: 'img/pictures/beach', format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+    </div>
+  </div>
+  <div class="relative bg-white sm:w-full sm:max-w-[540px] pt-2 sm:pb-2 sm:pl-2 pr-2 mt-64 sm:mt-5 xl:mt-10 sm:mb-5 xl:mb-10 mr-2 sm:mr-0 duration-6 anim anim-right" data-anim="hidden">
+    <div class="px-4 py-6 border border-solid border-second sm:py-10 lg:py-12 xl:py-24 sm:px-7 lg:px-12">
+      <h2 class="mb-4 font-normal leading-3 text-32 sm:text-38 lg:text-46 sm:mb-4">Скидка 10%</h2>
+      <p class="mb-5 font-normal leading-4 sm:mb-8 lg:mb-12 text-14 sm:text-16">
+        на купальники и пляжную одежду бренда Leah
+      </p>
+      <p class="mb-10 font-normal leading-4 sm:mb-16 lg:mb-20 text-14 sm:text-16">
+        Рады сообщить, что для всех членов гольф-клуба Геленджик Гольф Резорт действует скидка 10% на купальники и пляжную одежду бренда Leah, представленную на территории нового SPA-комплекса OLIVA!
+      </p>
+      <div class="flex">
+        <a class="btn btn-second btn-lg btn-fill" data-waved="dark" href="">Перейти в каталог</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Обратная связь -->
+
+<%= feedback({data, loader, picture}) %>
+
+<%= footer({data, loader, icon, picture}) %>

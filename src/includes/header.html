@@ -106,6 +106,31 @@
     header.tel = '8 966 760 99 66'
     header.btn = true
     header.text = 'Лагуна Family - это место с уникальной инфраструктурой, не имеющей аналогов на Черноморском побережье'
+  } else if (data.page === 'oliva') {
+    header.logo = 'img/pictures/oliva-logo'
+    header.logoDark = 'img/pictures/oliva-logo-dark'
+    header.size = 'w-16 sm:w-20'
+    header.scroll = false
+    header.nav = [
+      {
+        id: '',
+        text: 'Главная'
+      },
+      {
+        id: '',
+        text: 'Семейный ресторан'
+      },
+      {
+        id: '',
+        text: 'Бассейн с пляжным клубом'
+      },
+      {
+        id: '',
+        text: 'Ночной клуб'
+      }
+    ]
+    header.tel = '8 966 760 99 66'
+    header.text = 'Лагуна Family - это место с уникальной инфраструктурой, не имеющей аналогов на Черноморском побережье'
   }
 %>
 
@@ -171,6 +196,20 @@
     </div>
     </div>
   </header>
+  <% } else if (data.page === 'oliva') { %>
+  <header class="container fixed top-0 left-0 right-0 flex items-center justify-between gap-3 py-4 sm:gap-6 z-3 bg-opacity-90 duration-2" data-header>
+    <a class="hidden btn btn-white sm:flex" data-waved="light" href="" target="_blank">г. Геленджик, Стартовая, 1</a>
+    <a class="btn btn-white <%= header.size %>" data-waved="light" href="/">
+      <%= picture({src: header.logo, format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
+    </a>
+    <div class="flex flex-col items-end gap-1 sm:items-start min-w-max">
+      <a class="font-bold btn btn-white text-14 sm:text-16 md:text-20 leading-1" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
+      <a class="font-normal border-b border-white border-dashed btn btn-white text-12 sm:text-14 leading-1" data-waved="light" href="tel: <%= header.tel %>">Написать WhatsAp</a>
+    </div>
+    <button class="btn btn-white xl:hidden text-36 sm:text-48" data-sidebar-open="mobile-menu" data-waved="light">
+      <%= icon({id: 'burger'}) %>
+    </button>
+  </header>
   <% } else { %>
   <header class="container fixed top-0 left-0 right-0 flex items-center justify-between gap-3 py-4 sm:gap-6 z-3 bg-opacity-90 xl:py-8 duration-2" data-header>
     <a class="btn btn-white <%= header.size %>" data-waved="light" href="/">
@@ -200,7 +239,7 @@
   <div class="fixed inset-0 invisible opacity-0 menu z-6 duration-1" data-sidebar="close" data-sidebar-resize="xl" id="mobile-menu">
     <div class="menu__content flex flex-col bg-white invisible opacity-0 overflow-auto backdrop-blur-sm w-full max-w-[375px] h-full duration-3">
       <div class="flex items-center justify-between gap-8 p-4">
-        <a class="w-20 btn btn-black" data-waved="light" href="/">
+        <a class="btn btn-black <%= data.page === 'oliva' ? 'w-16' : 'w-20' %>" data-waved="light" href="/">
           <%= picture({src: header.logoDark, format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
         </a>
         <a class="font-bold btn btn-black text-14" data-waved="light" href="tel: <%= header.tel %>"><%= header.tel %></a>
@@ -213,7 +252,7 @@
         <a class="hover:underline underline-offset-4 text-16 leading-1" <%= header.scroll ? 'data-scroll' : '' %> href="<%= item.id %>"><%= item.text %></a>
         <% }) %>
       </div>
-      <div class="px-4 py-8 mt-auto text-white bg-primary">
+      <div class="px-4 py-8 mt-auto text-white <%= data.page === 'oliva' ? 'bg-green' : 'bg-primary' %>">
         <div class="flex items-center pb-10 mb-10 border-b border-white border-solid gap-9 border-opacity-20">
           <%= picture({src: header.logo, format: '.png', webp: true, classes: 'w-24 min-w-[96px]', data: false, loading: 'auto'}) %>
           <p class="font-normal leading-3 text-12 opacity-40"><%= header.text %></p>
@@ -238,12 +277,24 @@
           <div class="flex flex-col items-start">
             <h3 class="mb-6 font-normal leading-3 text-20">Контакты</h3>
             <p class="mb-5 font-normal leading-4 text-14">Россия, Краснодарский край, <br>Геленджик, Голубая бухта, ул. Стартовая 1</p>
-            <a class="mb-5 btn btn-white text-20" data-waved="light" href="tel: +7 (928) 237-72-00">
-              <span class="mr-2 text-20 opacity-40">
-                <%= icon({id: 'phone'}) %>
-              </span>
-              +7 (928) 237-72-00
-            </a>
+            <div class="flex items-center justify-between gap-5 mb-5">
+              <a class=" btn btn-white text-20" data-waved="light" href="tel: +7 (928) 237-72-00">
+                <span class="mr-2 text-20 opacity-40">
+                  <%= icon({id: 'phone'}) %>
+                </span>
+                +7 (928) 237-72-00
+              </a>
+              <% if (data.page === 'oliva') { %>
+              <div class="flex items-center gap-2">
+                <a class="btn btn-white rounded-max text-28" data-waved="dark" href="">
+                  <%= icon({id: 'wa'}) %>
+                </a>
+                <a class="btn btn-white rounded-max text-28" data-waved="dark" href="">
+                  <%= icon({id: 'tg'}) %>
+                </a>
+              </div>
+              <% } %>
+            </div>
             <a class="btn btn-white text-14" data-waved="light" href="mailto: golfrest@laguna-family.rest">
               <span class="mr-2 text-20 opacity-40">
                 <%= icon({id: 'email'}) %>
