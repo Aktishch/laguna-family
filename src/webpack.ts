@@ -14,6 +14,7 @@ import submitHandler from './ts/submit-handler'
 import inputs from './ts/inputs'
 import phoneMask from './ts/phone-mask'
 import quantity from './ts/quantity'
+import listing from './ts/listing'
 import preloader from './ts/preloader'
 
 import './scss/style.scss'
@@ -35,5 +36,6 @@ window.addEventListener('DOMContentLoaded', ((): void => {
   inputs()
   phoneMask()
   quantity()
+  listing()
   preloader()
 }) as EventListener)

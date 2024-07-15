@@ -200,11 +200,11 @@
   }
 ] %>
 
-<section class="container container-xs">
+<section class="container container-xs" data-listing="2">
   <h2 class="mb-8 font-normal leading-3 text-center sm:text-left text-32 sm:text-38 lg:text-46 sm:mb-12 duration-6 anim anim-up" data-anim="hidden">Галерея событий</h2>
   <div class="grid grid-cols-2 xl:grid-cols-3 grid-flow-dense auto-rows-[50px] sm:auto-rows-[180px] md:auto-rows-[250px] gap-2 sm:gap-4">
     <% for (var i = 0; i < gallery.length; i++) { %>
-    <div class="<%= gallery[i].col %> <%= gallery[i].row %> duration-6 anim anim-up" data-anim="hidden">
+    <div class="<%= gallery[i].col %> <%= gallery[i].row %> duration-6 anim anim-up <%= i > 3 ? 'hidden' : '' %>" <%= i > 3 ? 'data-listing-item' : '' %> data-anim="hidden">
       <a class="h-full pack bg-grey" data-movement="light" data-fancybox="gallery" href="img/pictures/beach.jpg">
         <%= loader %>
         <%= picture({src: 'img/pictures/beach', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
@@ -221,9 +221,7 @@
     </div>
     <% } %>
   </div>
-  <div class="flex mt-8">
-    <a class="btn btn-second btn-lg btn-fill" data-waved="dark" href="">Перейти в галерею</a>
-  </div>
+  <button class="btn btn-second btn-lg btn-fill mt-8" data-listing-show data-waved="dark">Перейти в галерею</button>
 </section>
 
 <!-- Прайс -->
