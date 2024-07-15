@@ -173,4 +173,50 @@
   <a class="mx-auto btn btn-black btn-lg btn-contur w-max" data-waved="dark" href="">Узнать подробнее</a>
 </section>
 
+<!-- Услуги -->
+
+<% var services = [
+  {
+    icon: 'spa',
+    text: 'SPA-комплекс'
+  },
+  {
+    icon: 'chef',
+    text: 'Ресторан'
+  },
+  {
+    icon: 'pool',
+    text: 'Банкетный зал'
+  }
+] %>
+
+<section class="container overflow-hidden services xl:px-7" id="projects-4">
+  <h2 class="mb-2 font-normal leading-3 text-center ease-linear text-36 sm:text-42 lg:text-subtitle duration-8 clip-path clip-path-down" data-anim="hidden">SPA-комплекс OLIVA</h2>
+  <h3 class="mb-6 font-normal leading-3 text-center ease-linear text-16 sm:text-20 lg:text-24 opacity-60 sm:mb-8 lg:mb-12 duration-8 clip-path clip-path-down" data-anim="hidden">Атмосфера роскоши, панорамный вид на бухту, эксклюзивный отдых</h3>
+  <div class="services-slider mb-7 sm:mb-12">
+    <div class="overflow-visible swiper">
+      <div class="swiper-wrapper">
+        <% for (var i = 0; i < services.length; i++) { %>
+        <a class="h-full swiper-slide" href="">
+          <div class="pack pack-box sm:pack-rect-lg lg:pack-[70] bg-grey h-full" data-movement="light">
+            <%= loader %>
+            <%= picture({src: 'img/pictures/service', format: '.jpg', webp: true, classes: 'image image-rise', data: false, loading: 'lazy'}) %>
+            <div class="absolute inset-0 flex items-end p-4 pointer-events-none services__gradient lg:p-8">
+              <div class="flex items-center text-white">
+                <div class="services__square flex items-center justify-center text-26 lg:text-40 backdrop-blur-md w-10 lg:w-16 min-w-[40px] lg:min-w-[64px] h-10 lg:h-16 mr-3 lg:mr-6">
+                  <%= icon({id: services[i].icon}) %>
+                </div>
+                <h4 class="font-medium text-20 lg:text-24 leading-1"><%= services[i].text %></h4>
+              </div>
+            </div>
+          </div>
+        </a>
+        <% } %>
+      </div>
+    </div>
+    <div class="mt-6 swiper-pagination md:hidden text-primary"></div>
+  </div>
+  <a class="mx-auto btn btn-black btn-lg btn-contur w-max" data-waved="dark" href="">Узнать подробнее</a>
+</section>
+
 <%= footer({data, loader, icon, picture}) %>
